@@ -1,0 +1,21 @@
+{
+  "baseline": 3275,
+  "current": 2519,
+  "removed": 756,
+  "files": {
+    "activity-detail.css": 1513,
+    "design-v36.css": 397,
+    "activities.css": 296,
+    "level.css": 237,
+    "home-navigation.css": 53,
+    "startup.css": 19,
+    "accessibility.css": 4,
+    "base.css": 0,
+    "tokens.css": 0
+  },
+  "safe_passes": [
+    "Removed exact duplicate !important declarations with identical selector, property, value and at-rule context.",
+    "Removed earlier !important declarations when the same selector/property/context had a later !important declaration; the later declaration wins by normal source order."
+  ],
+  "not_automated": "Remaining declarations are intentionally left for visual regression review before specificity/cascade changes."
+}

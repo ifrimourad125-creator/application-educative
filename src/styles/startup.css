@@ -1,0 +1,620 @@
+/* ===== Écran de chargement premium ===== */
+
+/* Écran de démarrage distinct du chargement technique */
+.startup-screen {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  min-height: 100vh;
+  min-height: 100svh;
+  place-items: center;
+  overflow: hidden;
+  padding: clamp(18px, 4vmin, 34px);
+  color: #f8fdff;
+  background:
+    radial-gradient(circle at 50% 38%, rgba(15, 23, 42, 0.18), transparent 30%),
+    linear-gradient(135deg, #020617 0%, #08182f 46%, #030817 100%);
+  animation: startupScreenExit 0.62s ease 2.58s forwards;
+}
+
+.startup-screen::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background:
+    radial-gradient(circle at 18% 22%, rgba(30, 64, 175, 0.1), transparent 34%),
+    radial-gradient(circle at 82% 78%, rgba(88, 28, 135, 0.1), transparent 38%);
+}
+
+.startup-screen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    radial-gradient(circle at 20% 25%, rgba(255, 255, 255, 0.08) 0 1px, transparent 1.8px),
+    radial-gradient(circle at 78% 68%, rgba(125, 211, 252, 0.06) 0 1px, transparent 2px);
+  background-size:
+    92px 92px,
+    124px 124px;
+  opacity: 0.16;
+  mask-image: radial-gradient(circle at center, black 0%, transparent 74%);
+}
+
+.startup-content {
+  display: flex;
+  max-height: calc(100svh - 28px);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(10px, 2vh, 18px);
+  text-align: center;
+  animation: startupEnter 0.82s cubic-bezier(0.2, 0.9, 0.22, 1) both;
+}
+
+.startup-aurora {
+  position: absolute;
+  width: min(48vw, 500px);
+  aspect-ratio: 1;
+  border-radius: 999px;
+  opacity: 0.18;
+  filter: blur(44px);
+  animation: startupAurora 5s ease-in-out infinite;
+}
+
+.startup-aurora--left {
+  top: 14%;
+  left: -12%;
+  background: rgba(30, 64, 175, 0.16);
+}
+
+.startup-aurora--right {
+  right: -10%;
+  bottom: 10%;
+  background: rgba(88, 28, 135, 0.14);
+  animation-delay: -1.2s;
+}
+
+.startup-logo-shell {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: clamp(330px, 50vmin, 500px);
+  aspect-ratio: 1;
+  border-radius: 999px;
+  overflow: visible;
+  animation: startupOrbFloat 3.2s ease-in-out infinite;
+}
+
+.startup-logo-shell::before {
+  content: "";
+  position: absolute;
+  inset: -1.5%;
+  border-radius: 999px;
+  z-index: 0;
+  background: radial-gradient(
+    circle,
+    transparent 63%,
+    rgba(56, 189, 248, 0) 68%,
+    rgba(56, 189, 248, 0.28) 72%,
+    rgba(96, 165, 250, 0.46) 76%,
+    rgba(167, 139, 250, 0.3) 79%,
+    rgba(56, 189, 248, 0.18) 82%,
+    transparent 86%
+  );
+  filter: blur(12px);
+  opacity: 1;
+  transform: scale(1.04);
+  mix-blend-mode: screen;
+  animation: startupGlassHalo 3s ease-in-out infinite;
+}
+
+.startup-logo-shell::after {
+  content: "";
+  position: absolute;
+  inset: 4.8%;
+  border-radius: 999px;
+  z-index: 3;
+  border: 1.5px solid rgba(165, 243, 252, 0.5);
+  box-shadow:
+    0 0 10px 1px rgba(56, 189, 248, 0.42),
+    0 0 20px 3px rgba(56, 189, 248, 0.24),
+    0 0 34px 4px rgba(167, 139, 250, 0.14),
+    inset 0 0 9px rgba(255, 255, 255, 0.08);
+  opacity: 0.95;
+  mix-blend-mode: screen;
+  animation: startupGlassContour 3s ease-in-out infinite;
+}
+
+.startup-logo {
+  position: relative;
+  z-index: 2;
+  width: 95%;
+  height: 95%;
+  object-fit: contain;
+  filter: drop-shadow(0 16px 24px rgba(0, 0, 0, 0.34)) drop-shadow(0 0 8px rgba(56, 189, 248, 0.1));
+}
+
+.startup-text {
+  position: relative;
+  z-index: 7;
+  padding-bottom: 0.12em;
+}
+
+.startup-kicker {
+  margin-bottom: 7px;
+  color: rgba(125, 211, 252, 0.88);
+  font-size: clamp(0.76rem, 1.65vw, 0.9rem);
+  font-weight: 900;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.startup-text h1 {
+  margin: 0;
+  padding-bottom: 0.08em;
+  color: #ffffff;
+  font-size: clamp(2rem, 4.6vw, 3.1rem);
+  font-weight: 950;
+  letter-spacing: -0.052em;
+  line-height: 1.14;
+  text-shadow: 0 14px 38px rgba(0, 0, 0, 0.48);
+}
+
+.startup-text p {
+  margin: 8px 0 0;
+  color: rgba(207, 250, 254, 0.82);
+  font-size: clamp(0.9rem, 2.1vw, 1.05rem);
+  font-weight: 850;
+}
+
+.startup-progress {
+  width: min(240px, 50vw);
+  height: 5px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+.startup-progress span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #38bdf8, #22d3ee, #a78bfa);
+  transform-origin: left center;
+  animation: startupProgress 1.5s cubic-bezier(0.18, 0.7, 0.25, 1) both;
+}
+
+/* Chargement technique : texte seulement, sans répétition du logo de démarrage */
+.page-loader {
+  display: flex;
+  min-height: 100vh;
+  min-height: 100svh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  color: rgba(224, 242, 254, 0.76);
+  background:
+    radial-gradient(circle at center, rgba(14, 165, 233, 0.1), transparent 34%),
+    linear-gradient(135deg, #020617, #08142b 56%, #020617);
+  font-weight: 850;
+}
+
+.page-loader-dots {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-loader-dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #67e8f9;
+  box-shadow: 0 0 10px rgba(34, 211, 238, 0.42);
+  animation: pageLoaderDot 1s ease-in-out infinite;
+}
+
+.page-loader-dots span:nth-child(2) {
+  animation-delay: 0.14s;
+}
+
+.page-loader-dots span:nth-child(3) {
+  animation-delay: 0.28s;
+}
+
+@media (max-height: 740px) {
+  .startup-screen {
+    padding: 16px;
+  }
+
+  .startup-content {
+    gap: 8px;
+  }
+
+  .startup-logo-shell {
+    width: clamp(285px, 45vmin, 390px);
+  }
+
+  .startup-kicker {
+    margin-bottom: 4px;
+    font-size: 0.72rem;
+  }
+
+  .startup-text h1 {
+    font-size: clamp(1.78rem, 4.4vw, 2.45rem);
+    line-height: 1.16;
+  }
+
+  .startup-text p {
+    margin-top: 5px;
+    font-size: 0.9rem;
+  }
+
+  .startup-progress {
+    width: min(210px, 48vw);
+    height: 4px;
+  }
+}
+@keyframes startupEnter {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes startupOrbFloat {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-8px) scale(1.018);
+  }
+}
+
+@keyframes startupProgress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes startupBackdrop {
+  from {
+    transform: translate3d(-1.5%, -1%, 0) rotate(0deg);
+  }
+  to {
+    transform: translate3d(1.5%, 1%, 0) rotate(4deg);
+  }
+}
+
+@keyframes startupAurora {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(18px, -12px, 0) scale(1.04);
+  }
+}
+
+@keyframes pageLoaderDot {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: translateY(0) scale(0.85);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-7px) scale(1.12);
+  }
+}
+
+@keyframes startupGlassHalo {
+  0%,
+  100% {
+    opacity: 0.76;
+    transform: scale(1.03);
+    filter: blur(10px);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.06);
+    filter: blur(13px);
+  }
+}
+
+@keyframes startupGlassContour {
+  0%,
+  100% {
+    opacity: 0.78;
+    box-shadow:
+      0 0 8px 1px rgba(56, 189, 248, 0.34),
+      0 0 16px 2px rgba(56, 189, 248, 0.18),
+      0 0 28px 3px rgba(167, 139, 250, 0.11),
+      inset 0 0 8px rgba(255, 255, 255, 0.06);
+  }
+  50% {
+    opacity: 1;
+    box-shadow:
+      0 0 12px 2px rgba(56, 189, 248, 0.46),
+      0 0 24px 4px rgba(56, 189, 248, 0.24),
+      0 0 38px 5px rgba(167, 139, 250, 0.16),
+      inset 0 0 10px rgba(255, 255, 255, 0.08);
+  }
+}
+
+@keyframes startupScreenExit {
+  to {
+    opacity: 0;
+    transform: scale(0.985);
+    filter: blur(6px);
+  }
+}
+
+/* Bouton global : activation / désactivation des sons UI */
+.sound-toggle {
+  position: fixed;
+  top: clamp(14px, 2.2vw, 24px);
+  right: clamp(14px, 2.2vw, 24px);
+  z-index: 360;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-width: 142px;
+  min-height: 56px;
+  padding: 12px 18px;
+  overflow: hidden;
+  border: 2px solid rgba(165, 243, 252, 0.7);
+  border-radius: 999px;
+  color: #ffffff;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.22), transparent 30%),
+    linear-gradient(135deg, rgba(14, 116, 144, 0.92), rgba(49, 46, 129, 0.88));
+  box-shadow:
+    0 18px 42px rgba(0, 0, 0, 0.34),
+    0 0 0 1px rgba(255, 255, 255, 0.12) inset,
+    0 0 26px rgba(34, 211, 238, 0.22);
+  backdrop-filter: blur(16px);
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    opacity 180ms ease;
+}
+
+.sound-toggle:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.86);
+  box-shadow:
+    0 20px 46px rgba(0, 0, 0, 0.38),
+    0 0 30px rgba(56, 189, 248, 0.32),
+    0 0 0 1px rgba(255, 255, 255, 0.18) inset;
+}
+
+.sound-toggle:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.sound-toggle__glow {
+  position: absolute;
+  inset: -35%;
+  background:
+    radial-gradient(circle at 28% 28%, rgba(255, 255, 255, 0.25), transparent 34%),
+    radial-gradient(circle at 74% 72%, rgba(34, 211, 238, 0.22), transparent 40%);
+  opacity: 1;
+  pointer-events: none;
+}
+
+.sound-toggle__dot {
+  position: relative;
+  z-index: 1;
+  width: 9px;
+  height: 9px;
+  flex: 0 0 auto;
+  border-radius: 999px;
+  background: #22c55e;
+  box-shadow: 0 0 10px rgba(34, 197, 94, 0.88);
+}
+
+.sound-toggle__icon,
+.sound-toggle__text {
+  position: relative;
+  z-index: 1;
+}
+
+.sound-toggle__icon {
+  font-size: 1.32rem;
+  line-height: 1;
+  filter: drop-shadow(0 5px 12px rgba(0, 0, 0, 0.34));
+}
+
+.sound-toggle__text {
+  font-size: 0.86rem;
+  font-weight: 950;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.32);
+  white-space: nowrap;
+}
+
+.sound-toggle--off {
+  border-color: rgba(255, 255, 255, 0.44);
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.14), transparent 30%),
+    linear-gradient(135deg, rgba(51, 65, 85, 0.94), rgba(15, 23, 42, 0.92));
+  box-shadow:
+    0 18px 42px rgba(0, 0, 0, 0.34),
+    0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+}
+
+.sound-toggle--off .sound-toggle__dot {
+  background: #fb7185;
+  box-shadow: 0 0 10px rgba(251, 113, 133, 0.84);
+}
+
+@media (max-width: 640px) {
+  .sound-toggle {
+    min-width: 118px;
+    min-height: 50px;
+    gap: 8px;
+    padding: 10px 13px;
+  }
+
+  .sound-toggle__icon {
+    font-size: 1.18rem;
+  }
+
+  .sound-toggle__text {
+    font-size: 0.76rem;
+  }
+}
+
+#root /* ===== V10 — bouton Son : même famille glass, #root plus précis et moins brumeux ===== */
+.sound-toggle {
+  min-width: 132px ;
+  min-height: 52px ;
+  padding: 10px 15px ;
+  gap: 9px ;
+  border: 1.35px solid rgba(190, 238, 255, 0.58) ;
+  background:
+    linear-gradient(135deg, rgba(8, 56, 83, 0.76) 0%, rgba(17, 41, 92, 0.72) 54%, rgba(50, 34, 88, 0.66) 100%),
+    linear-gradient(180deg, rgba(255,255,255,0.08), transparent 52%) ;
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.08) inset,
+    0 0 0 5px rgba(56,189,248,0.018),
+    0 0 12px rgba(56,189,248,0.18),
+    0 12px 28px rgba(0,0,0,0.34) ;
+  backdrop-filter: blur(14px) saturate(1.16) ;
+  -webkit-backdrop-filter: blur(14px) saturate(1.16) ;
+}
+
+.sound-toggle::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  border: 1px solid rgba(255,255,255,0.08);
+  pointer-events: none;
+}
+
+.sound-toggle::after {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  width: 42px;
+  height: 1.35px;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, rgba(145,232,255,0.9), transparent);
+  box-shadow: 0 0 5px rgba(56,189,248,0.46);
+  pointer-events: none;
+}
+
+#root .sound-toggle:hover {
+  box-shadow:
+    0 0 0 1px rgba(255,255,255,0.11) inset,
+    0 0 0 5px rgba(56,189,248,0.024),
+    0 0 16px rgba(56,189,248,0.24),
+    0 15px 32px rgba(0,0,0,0.38) ;
+}.sound-toggle__glow {
+  
+  
+  
+}
+#root .sound-toggle__glow {
+  opacity: 0.38;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.08), transparent 34%),
+    radial-gradient(circle at 82% 88%, rgba(56,189,248,0.12), transparent 40%);
+}
+.sound-toggle__dot {
+  
+  
+  
+}
+#root .sound-toggle__dot {
+  width: 8px;
+  height: 8px;
+  box-shadow: 0 0 6px rgba(34,197,94,0.85),
+    0 0 12px rgba(34,197,94,0.28);
+}
+.sound-toggle__icon {
+  
+}
+#root .sound-toggle__icon {
+  font-size: 1.14rem;
+}
+.sound-toggle__text {
+  
+  
+}
+#root .sound-toggle__text {
+  font-size: 0.8rem;
+  font-weight: 900;
+}
+
+
+/* ===== V13 — reposition global sound toggle and reduce visual obstruction ===== */
+.sound-toggle--home {
+  top: clamp(14px, 2.2vw, 24px);
+  right: clamp(14px, 2.2vw, 24px);
+  left: auto;
+}
+
+.sound-toggle--side {
+  left: clamp(18px, 2vw, 32px);
+  top: calc(clamp(14px, 2.2vw, 24px) + 68px);
+  right: auto;
+}
+
+@media (max-width: 900px) {
+  .sound-toggle--side {
+    left: clamp(12px, 2vw, 18px);
+    top: calc(clamp(12px, 2vw, 18px) + 64px);
+  }
+}
+
+@media (max-width: 640px) {
+  .sound-toggle--side {
+    top: auto;
+    bottom: 14px;
+    left: 12px;
+  }
+}
+
+/* ===== V15 — BASE V13 : bouton Son sous la colonne complète sur les pages d'activité ===== */
+.sound-toggle--detail {
+  left: clamp(18px, 2vw, 32px);
+  top: calc(clamp(14px, 2.2vw, 24px) + 136px);
+  right: auto;
+}
+
+@media (max-width: 900px) {
+  .sound-toggle--detail {
+    left: clamp(12px, 2vw, 18px);
+    top: calc(clamp(12px, 2vw, 18px) + 128px);
+  }
+}
+
+@media (max-width: 640px) {
+  .sound-toggle--detail {
+    top: auto;
+    bottom: 14px;
+    left: 12px;
+  }
+}

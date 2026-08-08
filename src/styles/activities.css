@@ -1,0 +1,1936 @@
+#root /* Arrière-plan Aurora + cartes d'activités lumineuses */
+.activity-selection-shell {
+  background:
+    radial-gradient(circle at 12% 10%, rgba(34, 211, 238, 0.18), transparent 28%),
+    radial-gradient(circle at 86% 14%, rgba(236, 72, 153, 0.17), transparent 30%),
+    linear-gradient(135deg, #010617 0%, #06162f 46%, #120725 100%) ;
+  isolation: isolate;
+}
+
+.activity-aurora,
+.activity-stars-layer {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+}
+
+.activity-aurora--one {
+  z-index: 0;
+  opacity: 0.7;
+  background: linear-gradient(
+    122deg,
+    transparent 0 18%,
+    rgba(34, 211, 238, 0.12) 31%,
+    rgba(79, 70, 229, 0.08) 42%,
+    transparent 58%
+  );
+  filter: blur(2px) saturate(1.35);
+  animation: activityAuroraMoveV18 12s ease-in-out infinite alternate;
+}
+
+.activity-aurora--two {
+  z-index: 0;
+  opacity: 0.66;
+  background: linear-gradient(
+    150deg,
+    transparent 0 35%,
+    rgba(217, 70, 239, 0.14) 49%,
+    rgba(251, 191, 36, 0.08) 60%,
+    transparent 76%
+  );
+  filter: blur(2px) saturate(1.25);
+  animation: activityAuroraMoveV18 15s ease-in-out infinite alternate-reverse;
+}
+
+.activity-aurora--three {
+  z-index: 0;
+  opacity: 0.5;
+  background: radial-gradient(ellipse at 50% 100%, rgba(14, 165, 233, 0.16), transparent 55%);
+  animation: activityAuroraPulseV18 9s ease-in-out infinite alternate;
+}
+
+.activity-stars-layer {
+  z-index: 1;
+  opacity: 0.34;
+  background-image:
+    radial-gradient(circle, rgba(255, 255, 255, 0.75) 0 1px, transparent 1.4px),
+    radial-gradient(circle, rgba(103, 232, 249, 0.65) 0 1px, transparent 1.5px);
+  background-position:
+    22px 40px,
+    110px 130px;
+  background-size:
+    210px 210px,
+    320px 320px;
+}
+
+@keyframes activityAuroraMoveV18 {
+  0% {
+    transform: translateX(-2%) translateY(0) scale(1);
+  }
+  100% {
+    transform: translateX(3%) translateY(-2%) scale(1.03);
+  }
+}
+
+@keyframes activityAuroraPulseV18 {
+  0% {
+    opacity: 0.32;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0.34;
+    transform: scale(1.04);
+  }
+}
+
+#root .activity-unit-hero {
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.12) inset,
+    0 0 36px rgba(34, 211, 238, 0.2),
+    0 28px 70px rgba(0, 0, 0, 0.42) ;
+}
+
+.activity-select-card {
+  min-height: 310px;
+  
+  transition:
+    transform 260ms ease,
+    filter 260ms ease,
+    box-shadow 260ms ease;
+}
+
+.activity-select-card:hover,
+.activity-select-card:focus-visible {
+  
+  filter: saturate(1.15) brightness(1.06) contrast(1.04);
+}
+
+.activity-card-glass,
+.activity-card-sheen,
+.activity-card-glow,
+.activity-card-spark {
+  position: absolute;
+  pointer-events: none;
+}
+
+.activity-card-glass {
+  inset: 0;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.23), transparent 38%),
+    radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.2), transparent 34%);
+  opacity: 0.62;
+}
+
+.activity-card-sheen {
+  inset: -35% -55%;
+  transform: translateX(-52%) rotate(18deg);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  opacity: 0;
+}
+
+.activity-select-card:hover .activity-card-sheen,
+.activity-select-card:focus-visible .activity-card-sheen {
+  animation: activityCardSheenV18 1200ms ease-out both;
+}
+
+@keyframes activityCardSheenV18 {
+  0% {
+    opacity: 0;
+    transform: translateX(-62%) rotate(18deg);
+  }
+  28% {
+    opacity: 0.92;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(62%) rotate(18deg);
+  }
+}
+
+.activity-card-glow {
+  left: 15%;
+  right: 15%;
+  bottom: -22px;
+  height: 34px;
+  border-radius: 999px;
+  background: var(--activity-glow);
+  filter: blur(26px);
+  opacity: 0.34;
+}
+
+.activity-card-spark {
+  top: 36%;
+  color: rgba(255, 255, 255, 0.92);
+  text-shadow: 0 0 14px rgba(255, 255, 255, 0.7);
+  font-size: 1.4rem;
+}
+
+.activity-card-spark--left {
+  left: 19%;
+}
+.activity-card-spark--right {
+  right: 19%;
+}
+
+.activity-icon-bubble {
+  position: relative;
+  width: 6.5rem;
+  height: 6.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: radial-gradient(
+    circle at 50% 40%,
+    rgba(255, 255, 255, 0.22),
+    rgba(255, 255, 255, 0.1) 58%,
+    rgba(255, 255, 255, 0.06)
+  );
+  border: 2px solid rgba(255, 255, 255, 0.34);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.1) inset,
+    0 0 26px var(--activity-glow-soft),
+    0 16px 34px rgba(0, 0, 0, 0.24);
+}
+
+.activity-icon-ring {
+  position: absolute;
+  inset: -8px;
+  border-radius: 999px;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    transparent 38deg,
+    #ffffff 56deg,
+    var(--activity-ring-a) 78deg,
+    transparent 108deg,
+    transparent 208deg,
+    #ffffff 226deg,
+    var(--activity-ring-b) 252deg,
+    transparent 286deg,
+    transparent 360deg
+  );
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 8px), #000 calc(100% - 7px));
+  mask: radial-gradient(farthest-side, transparent calc(100% - 8px), #000 calc(100% - 7px));
+  filter: drop-shadow(0 0 12px var(--activity-glow));
+}
+
+.activity-icon-core {
+  position: relative;
+  z-index: 2;
+  font-size: 3.75rem;
+  line-height: 1;
+  filter: drop-shadow(0 12px 14px rgba(0, 0, 0, 0.24));
+}
+
+.activity-card-title {
+  display: block;
+  margin-bottom: 1rem;
+  color: #fff;
+  font-size: clamp(2rem, 2.5vw, 2.7rem);
+  line-height: 1.08;
+  font-weight: 950;
+  text-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+}
+
+.activity-card-description {
+  display: block;
+  max-width: 310px;
+  color: rgba(255, 255, 255, 0.92);
+  font-family: "Inter", "Plus Jakarta Sans", system-ui, sans-serif;
+  font-size: clamp(1.05rem, 1.32vw, 1.25rem);
+  font-weight: 650;
+  line-height: 1.55;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
+}
+
+#root /* Boutons de navigation et actions : même famille glass, #root anneau rotatif et rectangle translucide. */
+.premium-nav-button,
+#root .premium-final-action {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.2),
+      rgba(255, 255, 255, 0.085) 46%,
+      rgba(2, 6, 23, 0.36)
+    ),
+    radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.34), transparent 45%) ;
+  border: 1.8px solid rgba(224, 242, 254, 0.52) ;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.16) inset,
+    0 18px 45px rgba(0, 0, 0, 0.36),
+    0 0 28px rgba(56, 189, 248, 0.22) ;
+}
+
+#root .premium-nav-button:hover,
+#root .premium-nav-button:focus-visible,
+#root .premium-final-action:hover,
+#root .premium-final-action:focus-visible {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.25),
+      rgba(255, 255, 255, 0.11) 46%,
+      rgba(2, 6, 23, 0.3)
+    ),
+    radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.42), transparent 45%) ;
+}
+
+/* ===== V19 — Finition confort visuel, glow au survol et titres harmonisés ===== */
+html,
+body,
+#root {
+  overflow-x: hidden;
+}
+
+body {
+  background: #020817;
+}
+
+#root .home-space-layer--base {
+  background:
+    radial-gradient(circle at 9% 62%, rgba(14, 165, 233, 0.3), transparent 24%),
+    radial-gradient(circle at 88% 62%, rgba(168, 85, 247, 0.28), transparent 26%),
+    radial-gradient(circle at 52% -12%, rgba(56, 189, 248, 0.1), transparent 28%),
+    linear-gradient(135deg, #010411 0%, #03081d 45%, #070119 100%) ;
+}
+
+#root .home-space-layer--aurora,
+#root .home-space-layer--rays {
+  opacity: 0.58 ;
+  filter: saturate(1.15) contrast(1.08) ;
+}
+
+#root .home-planet--left,
+#root .home-planet--right {
+  opacity: 0.54 ;
+}
+
+#root .home-title {
+  display: flex ;
+  justify-content: center;
+  align-items: baseline;
+  gap: 0.22em;
+  
+  white-space: nowrap;
+}
+
+.home-hero-panel {
+  
+}.home-level-card {
+  
+  
+}
+#root .home-level-card {
+  transition: transform 360ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 360ms ease,
+    box-shadow 360ms ease;
+}
+
+
+#root .home-level-card--1ac {
+  background:
+    radial-gradient(circle at 42% 14%, rgba(255, 255, 255, 0.26), transparent 20%),
+    linear-gradient(135deg, #12c7f7 0%, #0b8ff0 42%, #123fd2 100%) ;
+}
+
+#root .home-level-card--2ac {
+  background:
+    radial-gradient(circle at 48% 14%, rgba(255, 255, 255, 0.24), transparent 20%),
+    linear-gradient(135deg, #7c3df2 0%, #b318d3 40%, #ef1178 100%) ;
+}
+
+#root .home-level-card--3ac {
+  background:
+    radial-gradient(circle at 50% 14%, rgba(255, 255, 255, 0.28), transparent 20%),
+    linear-gradient(135deg, #ff7a0a 0%, #f59e0b 42%, #ffd11a 100%) ;
+}.home-card-bottom-glow {
+  
+  
+  transition:
+    opacity 360ms ease,
+    filter 360ms ease,
+    transform 360ms ease;
+}
+#root .home-card-bottom-glow {
+  opacity: 0.2;
+  filter: blur(18px);
+}
+
+
+#root .home-level-card:hover,
+#root .home-level-card:focus-visible {
+  filter: saturate(1.12) brightness(1.06) contrast(1.06) ;
+}
+
+.home-level-card--1ac:hover,
+.home-level-card--1ac:focus-visible {
+  
+}
+
+.home-level-card--2ac:hover,
+.home-level-card--2ac:focus-visible {
+  
+}
+
+.home-level-card--3ac:hover,
+.home-level-card--3ac:focus-visible {
+  
+}
+
+#root .home-level-card:hover .home-card-bottom-glow,
+#root .home-level-card:focus-visible .home-card-bottom-glow {
+  opacity: 0.62 ;
+  filter: blur(24px) ;
+  transform: translateY(-4px);
+}
+
+#root .home-level-icon-wrap::before,
+#root .activity-icon-bubble::before,
+#root .premium-nav-button__icon::before,
+#root .premium-final-action .premium-nav-button__icon::before {
+  animation-play-state: paused ;
+}
+
+#root .home-level-card:hover .home-level-icon-wrap::before,
+#root .home-level-card:focus-visible .home-level-icon-wrap::before,
+#root .activity-select-card:hover .activity-icon-bubble::before,
+#root .activity-select-card:focus-visible .activity-icon-bubble::before,
+#root .premium-nav-button:hover .premium-nav-button__icon::before,
+#root .premium-nav-button:focus-visible .premium-nav-button__icon::before,
+#root .premium-final-action:hover .premium-nav-button__icon::before,
+#root .premium-final-action:focus-visible .premium-nav-button__icon::before {
+  animation-play-state: running ;
+}
+
+#root .home-level-icon,
+#root .activity-icon-core {
+  transform: none ;
+}
+
+#root .home-level-card:hover .home-level-icon,
+#root .home-level-card:focus-visible .home-level-icon,
+#root .activity-select-card:hover .activity-icon-core,
+#root .activity-select-card:focus-visible .activity-icon-core {
+  transform: translateY(-2px) scale(1.035) ;
+}.activity-select-card {
+  
+  
+}
+#root .activity-select-card {
+  transition: transform 260ms ease,
+    filter 260ms ease,
+    box-shadow 260ms ease;
+}
+
+
+.activity-select-card:hover,
+.activity-select-card:focus-visible {
+  
+}
+
+.activity-card-glow {
+  
+  
+  transition:
+    opacity 260ms ease,
+    filter 260ms ease,
+    transform 260ms ease;
+}
+
+.activity-select-card:hover .activity-card-glow,
+.activity-select-card:focus-visible .activity-card-glow {
+  
+  
+  transform: translateY(-4px);
+}
+
+.activity-icon-bubble {
+  
+}
+
+.activity-select-card:hover .activity-icon-bubble,
+.activity-select-card:focus-visible .activity-icon-bubble {
+  
+}
+
+#root .premium-nav-button,
+#root .premium-final-action {
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.14) inset,
+    0 16px 36px rgba(0, 0, 0, 0.34) ;
+}
+
+#root .premium-nav-button:hover,
+#root .premium-nav-button:focus-visible,
+#root .premium-final-action:hover,
+#root .premium-final-action:focus-visible {
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.2) inset,
+    0 0 24px rgba(56, 189, 248, 0.28),
+    0 20px 44px rgba(0, 0, 0, 0.38) ;
+}
+
+#root .premium-nav-button__label,
+#root .premium-final-action__label {
+  font-weight: 900 ;
+}.premium-heading {
+  
+}
+#root .premium-heading {
+  letter-spacing: -0.03em;
+}
+
+
+#root /* Lisibilité des titres : forts, #root mais moins écrasants. */
+.text-4xl.font-black,
+#root .text-5xl.font-black,
+#root .text-3xl.font-black {
+  font-weight: 850 ;
+}
+
+#root /* États des réponses : couleurs vives, #root sans anneaux épais qui aveuglent. */
+button:disabled.bg-\[\#16f178\],
+#root .bg-\[\#16f178\] {
+  box-shadow:
+    0 0 18px rgba(22, 241, 120, 0.26),
+    0 16px 26px rgba(0, 0, 0, 0.14) ;
+}
+
+#root button:disabled.bg-\[\#ff2d55\],
+#root .bg-\[\#ff2d55\] {
+  box-shadow:
+    0 0 18px rgba(255, 45, 85, 0.26),
+    0 16px 26px rgba(0, 0, 0, 0.14) ;
+}
+
+#root /* V19 — anneaux : repos stables, #root rotation uniquement au survol. */
+.activity-icon-ring {
+  animation: none ;
+}
+
+#root .activity-select-card:hover .activity-icon-ring,
+#root .activity-select-card:focus-visible .activity-icon-ring {
+  animation: premiumOrbitFullSpinV18 1400ms cubic-bezier(0.16, 0.84, 0.24, 1.05) both ;
+}
+
+#root .home-level-icon-wrap::before,
+#root .home-level-icon-wrap::after,
+#root .premium-nav-button__icon::before,
+#root .premium-nav-button__icon::after,
+#root .premium-final-action__icon::before,
+#root .premium-final-action__icon::after {
+  animation: none ;
+}
+
+#root .home-level-card:hover .home-level-icon-wrap::before,
+#root .home-level-card:focus-visible .home-level-icon-wrap::before,
+#root .home-level-card:hover .home-level-icon-wrap::after,
+#root .home-level-card:focus-visible .home-level-icon-wrap::after,
+#root .premium-nav-button:hover .premium-nav-button__icon::before,
+#root .premium-nav-button:focus-visible .premium-nav-button__icon::before,
+#root .premium-nav-button:hover .premium-nav-button__icon::after,
+#root .premium-nav-button:focus-visible .premium-nav-button__icon::after,
+#root .premium-final-action:hover .premium-final-action__icon::before,
+#root .premium-final-action:focus-visible .premium-final-action__icon::before,
+#root .premium-final-action:hover .premium-final-action__icon::after,
+#root .premium-final-action:focus-visible .premium-final-action__icon::after {
+  animation: premiumOrbitFullSpinV18 1400ms cubic-bezier(0.16, 0.84, 0.24, 1.05) both ;
+}
+
+#root /* ===== V20 — confort final : un seul scroll, #root Aurora plus nette, #root cercles glass affinés ===== */
+html {
+  height: auto ;
+  min-height: 100% ;
+  overflow-x: hidden ;
+  overflow-y: auto ;
+  scrollbar-gutter: stable;
+  background: #01030d ;
+}
+
+body {
+  height: auto !important;
+  min-height: 100dvh !important;
+  overflow-x: hidden !important;
+  overflow-y: visible !important;
+  background: #01030d !important;
+}#root {
+  
+  
+  
+}
+#root #root {
+  min-height: 100dvh;
+  height: auto;
+  overflow: visible;
+}
+
+
+#root .home-premium-shell,
+#root .activity-selection-shell {
+  min-height: 100dvh ;
+  height: auto ;
+  overflow-x: hidden ;
+  overflow-y: visible ;
+}
+
+#root /* Aurora : vagues présentes, #root mais sans voile blanc fatigant. */
+.home-space-layer--base {
+  background:
+    radial-gradient(circle at 10% 61%, rgba(14, 165, 233, 0.2), transparent 22%),
+    radial-gradient(circle at 88% 61%, rgba(168, 85, 247, 0.2), transparent 24%),
+    linear-gradient(135deg, #01030d 0%, #020816 46%, #070016 100%) ;
+}
+
+.home-space-layer--aurora {
+  
+  
+  
+}
+
+#root .home-space-layer--rays {
+  opacity: 0.3 ;
+}
+
+.home-planet--left,
+.home-planet--right,
+.home-light-orb {
+  
+}
+
+.home-hero-panel {
+  
+  
+  
+}
+
+.home-title {
+  
+  
+  
+}
+
+.home-subtitle {
+  
+}
+
+#root /* Cartes : lueur fine au repos, #root plus vive uniquement au survol. */
+.home-level-card {
+  box-shadow:
+    0 0 0 1.35px rgba(255, 255, 255, 0.54) inset,
+    0 22px 62px rgba(0, 0, 0, 0.46) ;
+}
+
+.home-level-card--1ac:hover,
+.home-level-card--1ac:focus-visible {
+  
+}
+
+.home-level-card--2ac:hover,
+.home-level-card--2ac:focus-visible {
+  
+}
+
+.home-level-card--3ac:hover,
+.home-level-card--3ac:focus-visible {
+  
+}
+
+#root .home-card-bottom-glow,
+#root .activity-card-glow {
+  opacity: 0 ;
+}
+
+#root .home-level-card:hover .home-card-bottom-glow,
+#root .home-level-card:focus-visible .home-card-bottom-glow,
+#root .activity-select-card:hover .activity-card-glow,
+#root .activity-select-card:focus-visible .activity-card-glow {
+  opacity: 0.38 ;
+  filter: blur(18px) ;
+}
+
+#root /* Cercles contenant les icônes : verre plus clair, #root contour plus fin, #root effet conservé. */
+.home-level-icon-wrap,
+#root .activity-icon-bubble,
+#root .premium-nav-button__icon,
+#root .premium-final-action__icon,
+#root .level-icon-bubble {
+  position: relative;
+  isolation: isolate;
+  border-radius: 999px ;
+  border-width: 1.25px ;
+  border-style: solid ;
+  border-color: rgba(255, 255, 255, 0.3) ;
+  background: radial-gradient(
+    circle at 34% 22%,
+    rgba(255, 255, 255, 0.34),
+    rgba(255, 255, 255, 0.13) 34%,
+    rgba(255, 255, 255, 0.06) 64%,
+    rgba(2, 6, 23, 0.12)
+  ) ;
+  box-shadow:
+    0 0 0 0.8px rgba(255, 255, 255, 0.12) inset,
+    0 12px 26px rgba(0, 0, 0, 0.22),
+    0 0 16px rgba(255, 255, 255, 0.1) ;
+  backdrop-filter: blur(18px) saturate(1.42);
+}
+
+#root .home-level-card:hover .home-level-icon-wrap,
+#root .home-level-card:focus-visible .home-level-icon-wrap,
+#root .activity-select-card:hover .activity-icon-bubble,
+#root .activity-select-card:focus-visible .activity-icon-bubble,
+#root .premium-nav-button:hover .premium-nav-button__icon,
+#root .premium-nav-button:focus-visible .premium-nav-button__icon,
+#root .premium-final-action:hover .premium-final-action__icon,
+#root .premium-final-action:focus-visible .premium-final-action__icon,
+#root .level-icon-bubble:hover,
+#root .level-unit-card:hover .level-icon-bubble,
+#root .level-unit-card:focus-visible .level-icon-bubble {
+  border-color: rgba(255, 255, 255, 0.44) ;
+  box-shadow:
+    0 0 0 0.8px rgba(255, 255, 255, 0.18) inset,
+    0 0 18px rgba(125, 211, 252, 0.24),
+    0 16px 34px rgba(0, 0, 0, 0.26) ;
+}
+
+#root .home-level-icon-wrap::before,
+#root .premium-nav-button__icon::before,
+#root .premium-final-action__icon::before,
+#root .level-icon-bubble::before {
+  content: "";
+  position: absolute;
+  inset: -5px ;
+  z-index: 0;
+  border-radius: 999px;
+  pointer-events: none;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    transparent 44deg,
+    rgba(255, 255, 255, 0.92) 58deg,
+    rgba(103, 232, 249, 0.82) 76deg,
+    transparent 102deg,
+    transparent 214deg,
+    rgba(255, 255, 255, 0.76) 232deg,
+    rgba(217, 70, 239, 0.68) 250deg,
+    transparent 278deg,
+    transparent 360deg
+  ) ;
+  -webkit-mask: radial-gradient(
+    farthest-side,
+    transparent calc(100% - 5.2px),
+    #000 calc(100% - 4.4px)
+  ) ;
+  mask: radial-gradient(
+    farthest-side,
+    transparent calc(100% - 5.2px),
+    #000 calc(100% - 4.4px)
+  ) ;
+  opacity: 0.7 ;
+  filter: drop-shadow(0 0 7px rgba(255, 255, 255, 0.24)) ;
+  animation: none ;
+}.activity-icon-ring {
+  
+  
+  
+  
+  
+  
+  
+}
+#root .activity-icon-ring {
+  inset: -5px;
+  -webkit-mask: radial-gradient(
+    farthest-side,
+    transparent calc(100% - 5.2px),
+    #000 calc(100% - 4.4px)
+  );
+  mask: radial-gradient(
+    farthest-side,
+    transparent calc(100% - 5.2px),
+    #000 calc(100% - 4.4px)
+  );
+  animation: none;
+}
+
+
+#root .home-level-icon-wrap::after,
+#root .premium-nav-button__icon::after,
+#root .premium-final-action__icon::after,
+#root .level-icon-bubble::after {
+  width: 7px ;
+  height: 7px ;
+  top: -5px ;
+  right: 13px ;
+  opacity: 0.78 ;
+  box-shadow:
+    0 0 8px rgba(255, 255, 255, 0.8),
+    0 0 16px rgba(34, 211, 238, 0.48) ;
+}
+
+#root .home-level-card:hover .home-level-icon-wrap::before,
+#root .home-level-card:focus-visible .home-level-icon-wrap::before,
+#root .home-level-card:hover .home-level-icon-wrap::after,
+#root .home-level-card:focus-visible .home-level-icon-wrap::after,
+#root .activity-select-card:hover .activity-icon-ring,
+#root .activity-select-card:focus-visible .activity-icon-ring,
+#root .premium-nav-button:hover .premium-nav-button__icon::before,
+#root .premium-nav-button:focus-visible .premium-nav-button__icon::before,
+#root .premium-nav-button:hover .premium-nav-button__icon::after,
+#root .premium-nav-button:focus-visible .premium-nav-button__icon::after,
+#root .premium-final-action:hover .premium-final-action__icon::before,
+#root .premium-final-action:focus-visible .premium-final-action__icon::before,
+#root .premium-final-action:hover .premium-final-action__icon::after,
+#root .premium-final-action:focus-visible .premium-final-action__icon::after,
+#root .level-icon-bubble:hover::before,
+#root .level-icon-bubble:hover::after,
+#root .level-unit-card:hover .level-icon-bubble::before,
+#root .level-unit-card:hover .level-icon-bubble::after,
+#root .level-unit-card:focus-visible .level-icon-bubble::before,
+#root .level-unit-card:focus-visible .level-icon-bubble::after {
+  opacity: 0.98 ;
+  animation: premiumOrbitFullSpinV18 1500ms cubic-bezier(0.16, 0.84, 0.24, 1.05) both ;
+}
+
+.home-level-icon,
+.activity-icon-core,
+.premium-nav-button__svg,
+.premium-final-action__icon,
+.level-icon-bubble > span,
+.level-icon-bubble > svg {
+  position: relative;
+  z-index: 2;
+}.activity-icon-bubble {
+  
+  
+}
+#root .activity-icon-bubble {
+  width: 6.05rem;
+  height: 6.05rem;
+}
+.activity-icon-core {
+  
+  
+}
+#root .activity-icon-core {
+  font-size: 3.25rem;
+  line-height: 1;
+}
+
+
+#root /* Boutons navigation : plus fins, #root toujours glass et créatifs. */
+.premium-nav-button,
+#root .premium-final-action {
+  width: 104px ;
+  min-height: 106px ;
+  border-radius: 28px ;
+  border-width: 1.25px ;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.18),
+      rgba(255, 255, 255, 0.075) 46%,
+      rgba(2, 6, 23, 0.3)
+    ),
+    radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.26), transparent 44%) ;
+  box-shadow:
+    0 0 0 0.8px rgba(255, 255, 255, 0.14) inset,
+    0 14px 32px rgba(0, 0, 0, 0.32) ;
+}
+
+#root .premium-nav-button__icon,
+#root .premium-final-action__icon {
+  width: 54px ;
+  height: 54px ;
+}
+
+#root .premium-nav-button__label,
+#root .premium-final-action__label {
+  font-size: 1rem ;
+  
+  letter-spacing: -0.032em ;
+}
+
+#root /* Page activités : espace sûr à gauche, #root cartes plus glass, #root lueur au survol seulement. */
+.activity-selection-shell > .relative.z-10 {
+  padding-left: clamp(7.4rem, 11vw, 10rem) ;
+}#root .activity-select-card {
+  border-width: 1.35px ;
+  
+  
+}
+#root .activity-select-card {
+  min-height: 300px;
+}
+
+
+.activity-select-card:hover,
+.activity-select-card:focus-visible {
+  
+}.activity-card-title {
+  
+  
+  
+}
+#root .activity-card-title {
+  font-size: clamp(1.85rem, 2.28vw, 2.45rem);
+  font-weight: 870;
+  letter-spacing: -0.028em;
+}
+.activity-card-description {
+  
+  
+}
+#root .activity-card-description {
+  font-size: clamp(1rem, 1.18vw, 1.16rem);
+  font-weight: 600;
+}
+
+
+#root /* Titres des autres pages : harmonie au lieu d'un gras trop lourd. */
+.activity-unit-hero h1,
+#root .level-page-title,
+#root .text-4xl.font-black,
+#root .text-5xl.font-black {
+  font-weight: 840 ;
+  letter-spacing: -0.018em ;
+  word-spacing: 0.08em ;
+}
+
+.level-icon-bubble {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #fff;
+}
+
+#root .level-icon-bubble--hero {
+  width: 5.8rem ;
+  height: 5.8rem ;
+  font-size: 3.45rem ;
+}
+
+#root .level-icon-bubble--unit {
+  width: 4.8rem ;
+  height: 4.8rem ;
+  font-size: 2.85rem ;
+}
+
+#root /* Si l'écran est étroit, #root on évite que la navigation couvre les cartes. */
+@media (max-width: 900px) {
+  .activity-selection-shell > .relative.z-10 {
+    padding-left: 0 ;
+    padding-top: 8.5rem ;
+  }
+
+  .premium-nav-button,
+  .premium-final-action {
+    
+    min-height: 94px ;
+    border-radius: 24px ;
+  }
+
+  .premium-nav-button__icon,
+  .premium-final-action__icon {
+    width: 48px ;
+    height: 48px ;
+  }
+}
+
+/* ===== V21 — interface applicative sans barres visibles, accueil ajusté et contours permanents ===== */
+/* Aucune barre de scroll visible : l'interface garde un comportement d'application. */
+html,
+body,
+#root,
+.home-premium-shell,
+.activity-selection-shell,
+* {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+#root::-webkit-scrollbar,
+.home-premium-shell::-webkit-scrollbar,
+.activity-selection-shell::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+  display: none !important;
+  background: transparent !important;
+}
+
+#root /* Accueil : tout doit tenir comme un écran d'application, #root sans titre coupé ni vide noir. */
+.home-premium-shell {
+  height: 100dvh ;
+  min-height: 100dvh ;
+  max-height: 100dvh ;
+  overflow: hidden ;
+  background: #01030d ;
+}#root .home-premium-content {
+  
+  
+  width: min(1360px, calc(100% - 3rem)) ;
+  
+  gap: clamp(1.45rem, 3.2vh, 2.45rem) ;
+  
+}
+#root .home-premium-content {
+  height: 100%;
+  min-height: 0;
+  padding: clamp(0.9rem, 2vh, 1.45rem) 0 clamp(1rem, 2.2vh, 1.65rem);
+  justify-content: center;
+}
+#root .home-hero-panel {
+  
+  
+  border-color: rgba(186, 230, 253, 0.58) ;
+  
+  
+  box-shadow:
+    0 0 0 1px rgba(125, 211, 252, 0.2) inset,
+    0 0 20px rgba(56, 189, 248, 0.3),
+    0 0 42px rgba(168, 85, 247, 0.18),
+    0 22px 62px rgba(0, 0, 0, 0.52) ;
+}
+#root .home-hero-panel {
+  width: min(760px, 100%);
+  border-width: 1.45px;
+  border-radius: clamp(1.65rem, 3vw, 2rem);
+  padding: clamp(1.1rem, 2.2vh, 1.65rem) clamp(1.7rem, 4.4vw, 3.7rem);
+}
+#root .home-title {
+  
+  
+  letter-spacing: -0.032em ;
+  gap: clamp(0.22em, 0.95vw, 0.36em) ;
+  text-shadow:
+    0 2px 0 rgba(255, 255, 255, 0.22),
+    0 10px 20px rgba(0, 0, 0, 0.54),
+    0 0 20px rgba(255, 255, 255, 0.15) ;
+}
+#root .home-title {
+  font-size: clamp(3rem, 4.65vw, 4.78rem);
+  line-height: 0.98;
+}
+.home-subtitle {
+  
+  
+  
+}
+#root .home-subtitle {
+  margin-top: clamp(0.55rem, 1.2vh, 0.85rem);
+  font-size: clamp(1.08rem, 1.38vw, 1.46rem);
+  line-height: 1.12;
+}
+#root .home-level-grid {
+  gap: clamp(2rem, 4.2vw, 4.1rem) ;
+  
+}
+#root .home-level-grid {
+  align-items: center;
+}
+
+
+#root .home-level-card {
+  min-height: clamp(250px, 31.5vh, 324px) ;
+  border: 1.55px solid rgba(255, 255, 255, 0.68) ;
+  border-radius: clamp(1.65rem, 3vw, 2rem) ;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.22) inset,
+    0 0 13px rgba(255, 255, 255, 0.12),
+    0 22px 58px rgba(0, 0, 0, 0.44) ;
+}#root .home-level-card--1ac {
+  
+  box-shadow:
+    0 0 0 1px rgba(207, 250, 254, 0.26) inset,
+    0 0 14px rgba(34, 211, 238, 0.24),
+    0 22px 58px rgba(0, 0, 0, 0.44) ;
+}
+#root .home-level-card--1ac {
+  border-color: rgba(207, 250, 254, 0.82);
+}
+#root .home-level-card--2ac {
+  
+  box-shadow:
+    0 0 0 1px rgba(251, 207, 232, 0.24) inset,
+    0 0 14px rgba(236, 72, 153, 0.24),
+    0 22px 58px rgba(0, 0, 0, 0.44) ;
+}
+#root .home-level-card--2ac {
+  border-color: rgba(251, 207, 232, 0.82);
+}
+#root .home-level-card--3ac {
+  
+  box-shadow:
+    0 0 0 1px rgba(254, 249, 195, 0.24) inset,
+    0 0 14px rgba(251, 191, 36, 0.24),
+    0 22px 58px rgba(0, 0, 0, 0.44) ;
+}
+#root .home-level-card--3ac {
+  border-color: rgba(254, 249, 195, 0.84);
+}
+
+
+#root .home-level-card--1ac:hover,
+#root .home-level-card--1ac:focus-visible {
+  border-color: rgba(207, 250, 254, 0.98) ;
+  box-shadow:
+    0 0 0 1.4px rgba(207, 250, 254, 0.72) inset,
+    0 0 22px rgba(34, 211, 238, 0.58),
+    0 0 42px rgba(14, 165, 233, 0.28),
+    0 30px 70px rgba(0, 0, 0, 0.5) ;
+}
+
+#root .home-level-card--2ac:hover,
+#root .home-level-card--2ac:focus-visible {
+  border-color: rgba(251, 207, 232, 0.98) ;
+  box-shadow:
+    0 0 0 1.4px rgba(251, 207, 232, 0.72) inset,
+    0 0 22px rgba(236, 72, 153, 0.6),
+    0 0 42px rgba(192, 38, 211, 0.3),
+    0 30px 70px rgba(0, 0, 0, 0.5) ;
+}
+
+#root .home-level-card--3ac:hover,
+#root .home-level-card--3ac:focus-visible {
+  border-color: rgba(254, 249, 195, 0.98) ;
+  box-shadow:
+    0 0 0 1.4px rgba(254, 249, 195, 0.72) inset,
+    0 0 22px rgba(251, 191, 36, 0.62),
+    0 0 42px rgba(234, 88, 12, 0.3),
+    0 30px 70px rgba(0, 0, 0, 0.5) ;
+}
+
+#root .home-level-icon-wrap {
+  width: clamp(5.15rem, 7.2vw, 6.45rem) ;
+  height: clamp(5.15rem, 7.2vw, 6.45rem) ;
+  margin: clamp(0.75rem, 1.4vh, 1.05rem) auto clamp(1.3rem, 2.2vh, 1.75rem) ;
+}.home-level-icon {
+  
+}
+#root .home-level-icon {
+  font-size: clamp(2.45rem, 4.2vw, 3.45rem);
+}
+
+
+#root .home-level-short {
+  font-size: clamp(3.45rem, 6.1vw, 5.25rem) ;
+  line-height: 0.88 ;
+}
+
+#root .home-level-line {
+  margin: clamp(0.8rem, 1.55vh, 1.08rem) auto clamp(0.48rem, 1vh, 0.7rem) ;
+}
+
+#root .home-level-name {
+  font-size: clamp(0.94rem, 1.22vw, 1.14rem) ;
+}#root .home-level-arrow {
+  width: clamp(2.25rem, 3vw, 2.6rem) ;
+  height: clamp(2.25rem, 3vw, 2.6rem) ;
+  margin: clamp(0.8rem, 1.7vh, 1.25rem) auto 0 ;
+  
+}
+#root .home-level-arrow {
+  font-size: 1.75rem;
+}
+
+
+#root /* Fond Aurora : plus profond, #root moins de voile, #root vagues plus fines. */
+.home-space-layer--base {
+  background:
+    radial-gradient(circle at 10% 60%, rgba(14, 165, 233, 0.15), transparent 20%),
+    radial-gradient(circle at 88% 60%, rgba(168, 85, 247, 0.15), transparent 22%),
+    linear-gradient(135deg, #01030d 0%, #020712 47%, #060012 100%) ;
+}.home-space-layer--aurora {
+  
+  
+  
+}
+#root .home-space-layer--aurora {
+  opacity: 0.34;
+  filter: blur(0) saturate(1.45) contrast(1.28);
+  background: linear-gradient(
+      118deg,
+      transparent 0 25%,
+      rgba(34, 211, 238, 0.075) 33%,
+      rgba(79, 70, 229, 0.04) 43%,
+      transparent 58%
+    ),
+    linear-gradient(
+      146deg,
+      transparent 0 48%,
+      rgba(236, 72, 153, 0.085) 57%,
+      rgba(251, 191, 36, 0.035) 66%,
+      transparent 80%
+    );
+}
+
+
+#root .home-planet--left,
+#root .home-planet--right,
+#root .home-light-orb {
+  opacity: 0.1 ;
+}
+
+#root /* Cartes d'activités : contour permanent, #root même au repos. */
+.activity-select-card {
+  border: 1.55px solid rgba(255, 255, 255, 0.44) ;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.12) inset,
+    0 0 12px var(--activity-glow-soft),
+    0 22px 54px rgba(0, 0, 0, 0.42) ;
+}
+
+.activity-select-card:hover,
+.activity-select-card:focus-visible {
+  
+  
+}
+
+#root /* Les pages longues restent défilables si besoin, #root mais sans barre visible. */
+.activity-selection-shell,
+#root .min-h-screen,
+#root .h-screen,
+#root .overflow-y-auto,
+#root .overflow-auto {
+  scrollbar-width: none ;
+  -ms-overflow-style: none ;
+}
+
+#root /* ===== V40 — cartes d'activités HSL distinctes et plus lumineuses =====
+   Les dégradés sont pilotés par ActivitiesPage.tsx en HSL avec une saturation proche de 96%.
+   Objectif : éviter deux cartes bleues proches côte à côte et donner une identité nette à chaque activité. */
+.activity-select-card {
+  background: var(--activity-bg) ;
+  border-color: var(--activity-border-color) ;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.18) inset,
+    0 0 22px var(--activity-glow-soft),
+    0 24px 58px rgba(0, 0, 0, 0.42) ;
+}
+
+.activity-select-card:hover,
+.activity-select-card:focus-visible {
+  
+  
+}
+
+.activity-card-glass {
+  
+  
+}
+
+.activity-card-sheen {
+  
+}.activity-icon-bubble {
+  
+  
+  
+}
+#root .activity-icon-bubble {
+  border-color: rgba(255, 255, 255, 0.38);
+}
+
+
+#root .activity-select-card:hover .activity-icon-bubble,
+#root .activity-select-card:focus-visible .activity-icon-bubble {
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.2) inset,
+    0 0 28px var(--activity-glow),
+    0 18px 38px rgba(0, 0, 0, 0.28) ;
+}.activity-icon-ring {
+  
+  
+}
+#root .activity-icon-ring {
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    transparent 35deg,
+    rgba(255, 255, 255, 0.98) 54deg,
+    var(--activity-ring-a) 78deg,
+    transparent 112deg,
+    transparent 208deg,
+    rgba(255, 255, 255, 0.98) 228deg,
+    var(--activity-ring-b) 254deg,
+    transparent 292deg,
+    transparent 360deg
+  );
+}
+.activity-card-glow {
+  
+}
+#root .activity-card-glow {
+  background: var(--activity-glow);
+}
+
+
+.activity-card-title,
+.activity-card-description {
+  
+}
+
+#root /* ===== V5 — dégradés visibles + contours lumineux permanents =====
+   Saturation HSL autour de 96 %, #root écart de clarté plus fort et contour néon
+   pour éviter l'effet aplat / couleur unie. */
+.activity-select-card {
+  background: var(--activity-bg) ;
+  border: 1.75px solid color-mix(in srgb, var(--activity-border-color) 68%, white 32%) ;
+  outline: 1px solid rgba(255, 255, 255, 0.11);
+  outline-offset: -5px;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.24) inset,
+    0 0 0 2px rgba(255, 255, 255, 0.05) inset,
+    0 0 24px var(--activity-glow),
+    0 0 72px var(--activity-glow-soft),
+    0 28px 66px rgba(0, 0, 0, 0.48) ;
+  filter: saturate(1.12) brightness(1.06) contrast(1.04) ;
+}
+
+.activity-select-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  border-radius: inherit;
+  background:
+    radial-gradient(circle at 18% 12%, rgba(255, 255, 255, 0.36), rgba(255, 255, 255, 0.12) 18%, transparent 36%),
+    linear-gradient(132deg, rgba(255, 255, 255, 0.22) 0%, rgba(255, 255, 255, 0.055) 32%, transparent 52%),
+    radial-gradient(circle at 86% 86%, rgba(0, 0, 0, 0.16), transparent 34%);
+  mix-blend-mode: screen;
+  opacity: 0.78;
+}
+
+.activity-select-card::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  z-index: 2;
+  pointer-events: none;
+  border-radius: calc(34px - 1px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.42),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.14),
+    inset 1px 0 0 rgba(255, 255, 255, 0.16),
+    inset -1px 0 0 rgba(255, 255, 255, 0.1);
+}
+
+.activity-select-card:hover,
+.activity-select-card:focus-visible {
+  
+  
+}
+
+#root .activity-select-card .premium-gradient-border--activity,
+#root .activity-select-card .premium-gradient-border {
+  
+  
+  opacity: 1 ;
+  
+  
+}.activity-card-glass {
+  inset: 0;
+  z-index: 3;
+  
+  
+}
+#root .activity-card-glass {
+  background: radial-gradient(circle at 26% 13%, rgba(255, 255, 255, 0.42), rgba(255, 255, 255, 0.14) 18%, transparent 36%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.24), transparent 38%, rgba(255, 255, 255, 0.08) 78%, transparent 100%);
+  opacity: 0.84;
+}
+.activity-card-glow {
+  
+  
+  
+  
+  
+  
+  
+  z-index: 0;
+}
+#root .activity-card-glow {
+  left: 10%;
+  right: 10%;
+  bottom: -28px;
+  height: 54px;
+  filter: blur(30px) saturate(1.25);
+  opacity: 0.56;
+}
+
+
+.activity-card-sheen {
+  z-index: 4;
+  
+}
+
+.activity-card-spark {
+  z-index: 5;
+  
+  
+}
+
+.activity-icon-bubble {
+  
+  
+  
+}
+
+.activity-card-content {
+  position: relative;
+  z-index: 10;
+}
+
+.activity-card-title,
+.activity-card-description {
+  
+}
+
+#root /* Bouton retour : contour plus net pour rester cohérent avec les cartes V5. */
+.premium-side-nav .premium-nav-button--back {
+  border-color: rgba(209, 250, 255, 0.48) ;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.2) inset,
+    0 0 18px rgba(103, 232, 249, 0.34),
+    0 18px 38px rgba(0, 0, 0, 0.34) ;
+}
+
+.premium-side-nav .premium-nav-button--back:hover,
+.premium-side-nav .premium-nav-button--back:focus-visible {
+  
+}
+
+#root /* ===== V6 — rendu premium proche de la référence : glass néon multi-couches =====
+   Objectif : remplacer les taches claires par une lumière intégrée, #root un contour néon
+   permanent, #root un bas plus profond et une lueur basse comme une carte posée sur lumière. */
+.activity-selection-shell {
+  background:
+    radial-gradient(ellipse at 6% 54%, rgba(14, 165, 233, 0.22), transparent 30%),
+    radial-gradient(ellipse at 98% 58%, rgba(168, 85, 247, 0.18), transparent 34%),
+    linear-gradient(135deg, #01030d 0%, #020718 47%, #070015 100%) ;
+}.activity-aurora--one {
+  
+  
+  
+}
+#root .activity-aurora--one {
+  opacity: 0.54;
+  background: linear-gradient(
+    120deg,
+    transparent 0 20%,
+    rgba(34, 211, 238, 0.13) 34%,
+    rgba(37, 99, 235, 0.065) 46%,
+    transparent 62%
+  );
+  filter: blur(0.4px) saturate(1.42) contrast(1.18);
+}
+.activity-aurora--two {
+  
+  
+  
+}
+#root .activity-aurora--two {
+  opacity: 0.48;
+  background: linear-gradient(
+    150deg,
+    transparent 0 38%,
+    rgba(217, 70, 239, 0.12) 52%,
+    rgba(251, 146, 60, 0.05) 65%,
+    transparent 82%
+  );
+  filter: blur(0.4px) saturate(1.38) contrast(1.15);
+}
+.activity-aurora--three {
+  
+  
+}
+#root .activity-aurora--three {
+  opacity: 0.62;
+  background: radial-gradient(ellipse at 50% 100%, rgba(56, 189, 248, 0.13), transparent 48%),
+    radial-gradient(ellipse at 48% 78%, rgba(168, 85, 247, 0.09), transparent 56%);
+}
+#root .activity-select-card {
+  
+  
+  
+  overflow: hidden;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.2) inset,
+    0 0 0 2.5px rgba(255, 255, 255, 0.045) inset,
+    0 0 20px var(--activity-glow),
+    0 0 52px color-mix(in srgb, var(--activity-glow-soft) 76%, transparent),
+    0 20px 34px -12px var(--activity-glow-soft),
+    0 32px 72px rgba(0, 0, 0, 0.56) ;
+  
+}
+#root .activity-select-card {
+  background: linear-gradient(132deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.055) 24%, transparent 46%),
+    linear-gradient(315deg, rgba(255, 255, 255, 0) 0 61%, rgba(255, 255, 255, 0.08) 62%, rgba(255, 255, 255, 0.18) 100%),
+    linear-gradient(180deg, transparent 0%, transparent 58%, rgba(2, 6, 23, 0.22) 100%),
+    var(--activity-bg);
+  border: 1.8px solid color-mix(in srgb, var(--activity-border-color) 76%, white 24%);
+  outline: none;
+  filter: saturate(1.13) brightness(1.035) contrast(1.08);
+}
+
+
+/* Reflet glass géométrique : pas de grosse tache ronde dans le coin. */
+.activity-select-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  border-radius: inherit;
+  background:
+    linear-gradient(138deg, rgba(255, 255, 255, 0.24) 0%, rgba(255, 255, 255, 0.105) 18%, transparent 39%),
+    linear-gradient(322deg, transparent 0 67%, rgba(255, 255, 255, 0.095) 68%, rgba(255, 255, 255, 0.22) 100%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.16) 0%, transparent 12%, transparent 80%, rgba(255, 255, 255, 0.1) 100%);
+  opacity: 0.74;
+  mix-blend-mode: soft-light;
+}
+
+/* Verre épais + ligne basse lumineuse. */
+.activity-select-card::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  z-index: 2;
+  pointer-events: none;
+  border-radius: 32px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.56),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.24),
+    inset 1px 0 0 rgba(255, 255, 255, 0.2),
+    inset -1px 0 0 rgba(255, 255, 255, 0.11),
+    inset 0 -10px 18px -15px rgba(255, 255, 255, 0.7),
+    inset 0 -28px 46px -34px var(--activity-glow);
+}
+
+.activity-select-card:hover,
+.activity-select-card:focus-visible {
+  
+  
+  
+}
+
+#root .activity-select-card .premium-gradient-border--activity,
+#root .activity-select-card .premium-gradient-border {
+  inset: -1.4px ;
+  padding: 2.15px ;
+  
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.94) 0%,
+      var(--activity-border-color) 16%,
+      rgba(255, 255, 255, 0.24) 34%,
+      var(--activity-ring-a) 50%,
+      var(--activity-ring-b) 75%,
+      rgba(255, 255, 255, 0.7) 100%
+    ) ;
+  filter:
+    drop-shadow(0 0 8px var(--activity-glow))
+    drop-shadow(0 0 18px var(--activity-glow-soft)) ;
+}
+
+#root /* Reflet interne doux : aucune tache ronde agressive. */
+.activity-card-glass {
+  inset: 0 ;
+  z-index: 3 ;
+  background:
+    linear-gradient(140deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.07) 22%, transparent 43%),
+    linear-gradient(320deg, transparent 0 66%, rgba(255, 255, 255, 0.08) 67%, rgba(255, 255, 255, 0.17) 100%),
+    radial-gradient(ellipse at 50% 108%, rgba(255, 255, 255, 0.14), transparent 38%) ;
+  opacity: 0.72 ;
+  mix-blend-mode: screen;
+}
+
+#root /* Lumière basse interne, #root visible même au repos. */
+.activity-card-glow {
+  left: 8% ;
+  right: 8% ;
+  bottom: -34px ;
+  height: 68px ;
+  z-index: 0 ;
+  border-radius: 999px ;
+  background: var(--activity-glow) ;
+  filter: blur(32px) saturate(1.38) ;
+  opacity: 0.52 ;
+}
+
+.activity-select-card:hover .activity-card-glow,
+.activity-select-card:focus-visible .activity-card-glow {
+  
+  
+  transform: translateY(-3px) scaleX(1.06);
+}.activity-card-sheen {
+  
+  
+  
+}
+#root .activity-card-sheen {
+  z-index: 4;
+}
+
+
+.activity-icon-bubble {
+  
+  
+  
+}
+
+.activity-icon-ring {
+  
+  
+}#root .activity-card-spark {
+  
+  
+  text-shadow:
+    0 0 8px rgba(255, 255, 255, 0.72),
+    0 0 18px var(--activity-glow) ;
+  opacity: 0.86;
+}
+#root .activity-card-spark {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+
+.activity-card-title,
+.activity-card-description {
+  
+}
+
+#root /* Chaque activité reçoit une profondeur un peu plus forte dans le bas,
+   #root afin d'éviter l'effet fluorescent plat. */
+.activity-select-card[data-activity-theme="lecture-fluence"],
+#root .activity-select-card[data-activity-theme="outils-langue"] {
+  filter: saturate(1.08) brightness(1.0) contrast(1.12) ;
+}
+
+#root .activity-select-card[data-activity-theme="lecture-fluence"]:hover,
+#root .activity-select-card[data-activity-theme="outils-langue"]:hover,
+#root .activity-select-card[data-activity-theme="lecture-fluence"]:focus-visible,
+#root .activity-select-card[data-activity-theme="outils-langue"]:focus-visible {
+  filter: saturate(1.14) brightness(1.04) contrast(1.14) ;
+}
+
+#root /* Bouton retour : glass plus proche de la référence, #root moins bloc, #root plus lumineux. */
+.premium-side-nav .premium-nav-button--back {
+  border: 1.45px solid rgba(207, 250, 254, 0.64) ;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.08) 46%, rgba(2, 6, 23, 0.34)),
+    linear-gradient(135deg, rgba(14, 165, 233, 0.22), rgba(37, 99, 235, 0.16)) ;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.18) inset,
+    0 0 18px rgba(103, 232, 249, 0.38),
+    0 18px 38px rgba(0, 0, 0, 0.38) ;
+}
+
+#root .premium-side-nav .premium-nav-button--back:hover,
+#root .premium-side-nav .premium-nav-button--back:focus-visible {
+  box-shadow:
+    0 0 0 1.4px rgba(255, 255, 255, 0.3) inset,
+    0 0 25px rgba(103, 232, 249, 0.58),
+    0 25px 52px rgba(0, 0, 0, 0.46) ;
+}
+
+#root /* ===== V7 — cartes d'activités premium : halo réel, #root contour néon et reflets naturels =====
+   Ciblé uniquement sur la page des activités. La page d'accueil et les cartes de niveaux
+   gardent le rendu validé. Objectif : rapprocher les rectangles des cartes premium de la
+   référence : bord lumineux permanent, #root lumière posée sous la carte, #root profondeur et glints fins. */
+.activity-select-card {
+  overflow: visible ;
+  isolation: isolate;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, transparent 26%, rgba(2, 6, 23, 0.24) 100%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, transparent 30%),
+    var(--activity-bg) ;
+  border: 1.9px solid color-mix(in srgb, var(--activity-border-color) 84%, white 16%) ;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.25) inset,
+    0 0 0 3px rgba(255, 255, 255, 0.035) inset,
+    0 0 18px color-mix(in srgb, var(--activity-glow) 72%, transparent),
+    0 0 46px color-mix(in srgb, var(--activity-glow-soft) 82%, transparent),
+    0 24px 44px -18px var(--activity-glow-soft),
+    0 34px 78px rgba(0, 0, 0, 0.58) ;
+  filter: saturate(1.12) brightness(1.025) contrast(1.12) ;
+}
+
+#root .activity-select-card:hover,
+#root .activity-select-card:focus-visible {
+  border-color: color-mix(in srgb, var(--activity-border-color) 92%, white 8%) ;
+  box-shadow:
+    0 0 0 1.55px rgba(255, 255, 255, 0.4) inset,
+    0 0 0 3px rgba(255, 255, 255, 0.07) inset,
+    0 0 27px var(--activity-glow),
+    0 0 74px color-mix(in srgb, var(--activity-glow-soft) 92%, transparent),
+    0 30px 54px -16px var(--activity-glow-soft),
+    0 44px 94px rgba(0, 0, 0, 0.64) ;
+  filter: saturate(1.18) brightness(1.065) contrast(1.13) ;
+}
+
+/* Le halo extérieur n'est plus coupé par le rectangle : il déborde sous la carte,
+   comme dans la référence où la carte semble posée sur une lumière colorée. */
+.activity-card-floor-glow {
+  position: absolute;
+  pointer-events: none;
+  left: 10%;
+  right: 10%;
+  bottom: -34px;
+  height: 58px;
+  z-index: -1;
+  border-radius: 999px;
+  background:
+    radial-gradient(ellipse at 50% 50%, var(--activity-glow) 0%, var(--activity-glow-soft) 38%, transparent 74%);
+  opacity: 0.72;
+  filter: blur(20px) saturate(1.35);
+  transform: scaleX(0.96);
+  transition:
+    opacity 260ms ease,
+    transform 260ms ease,
+    filter 260ms ease;
+}
+
+.activity-select-card:hover .activity-card-floor-glow,
+.activity-select-card:focus-visible .activity-card-floor-glow {
+  opacity: 0.94;
+  filter: blur(24px) saturate(1.5);
+  transform: translateY(-3px) scaleX(1.04);
+}
+
+#root /* Contour néon plus lisible : deux lignes fines, #root pas une grosse bordure opaque. */
+.activity-select-card .premium-gradient-border--activity,
+#root .activity-select-card .premium-gradient-border {
+  inset: -2px ;
+  padding: 2.4px ;
+  opacity: 1 ;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.98) 0%,
+      var(--activity-border-color) 15%,
+      rgba(255, 255, 255, 0.16) 31%,
+      var(--activity-ring-a) 49%,
+      var(--activity-ring-b) 76%,
+      rgba(255, 255, 255, 0.82) 100%
+    ) ;
+  filter:
+    drop-shadow(0 0 8px var(--activity-glow))
+    drop-shadow(0 0 18px var(--activity-glow-soft))
+    drop-shadow(0 0 32px color-mix(in srgb, var(--activity-glow-soft) 70%, transparent)) ;
+}
+
+.activity-select-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  border-radius: inherit;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, transparent 13%, transparent 82%, rgba(255, 255, 255, 0.12) 100%),
+    linear-gradient(138deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.055) 19%, transparent 40%),
+    linear-gradient(322deg, transparent 0 72%, rgba(255, 255, 255, 0.07) 73%, rgba(255, 255, 255, 0.16) 100%);
+  opacity: 0.7;
+  mix-blend-mode: soft-light;
+}
+
+.activity-select-card::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  z-index: 2;
+  pointer-events: none;
+  border-radius: 32px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.62),
+    inset 0 2px 7px rgba(255, 255, 255, 0.1),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.26),
+    inset 1px 0 0 rgba(255, 255, 255, 0.2),
+    inset -1px 0 0 rgba(255, 255, 255, 0.12),
+    inset 0 -18px 34px -28px var(--activity-glow);
+}
+
+#root /* Reflet intégré : plus de grosse tache et moins de bande diagonale graphique. */
+.activity-card-glass {
+  inset: 0 ;
+  z-index: 3 ;
+  border-radius: inherit;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, transparent 24%, transparent 100%),
+    linear-gradient(142deg, rgba(255, 255, 255, 0.13) 0%, rgba(255, 255, 255, 0.045) 18%, transparent 38%),
+    radial-gradient(ellipse at 50% 103%, rgba(255, 255, 255, 0.13), transparent 34%) ;
+  opacity: 0.64 ;
+  mix-blend-mode: screen;
+}
+
+#root /* L'ancienne lumière interne devient une lueur basse plus fine dans la carte. */
+.activity-card-glow {
+  left: 14% ;
+  right: 14% ;
+  bottom: -18px ;
+  height: 34px ;
+  z-index: 0 ;
+  background: var(--activity-glow) ;
+  opacity: 0.38 ;
+  filter: blur(18px) saturate(1.35) ;
+}
+
+#root .activity-select-card:hover .activity-card-glow,
+#root .activity-select-card:focus-visible .activity-card-glow {
+  opacity: 0.58 ;
+  filter: blur(22px) saturate(1.48) ;
+}.activity-card-sheen {
+  
+  
+  border-radius: inherit;
+  clip-path: inset(0 round 34px);
+  
+}
+#root .activity-card-sheen {
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    transparent 0%,
+    transparent 34%,
+    rgba(255, 255, 255, 0.18) 48%,
+    rgba(255, 255, 255, 0.06) 58%,
+    transparent 72%,
+    transparent 100%
+  );
+}
+
+
+/* Lignes fines lumineuses comme sur les cartes de référence. */
+.activity-card-edge-light {
+  position: absolute;
+  pointer-events: none;
+  z-index: 6;
+  left: 18%;
+  right: 18%;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.78), var(--activity-glow), rgba(255, 255, 255, 0.7), transparent);
+  filter: blur(0.2px) drop-shadow(0 0 9px var(--activity-glow));
+  opacity: 0.72;
+}
+
+.activity-card-edge-light--top {
+  top: 1px;
+}
+
+.activity-card-edge-light--bottom {
+  bottom: 1px;
+  left: 24%;
+  right: 24%;
+  opacity: 0.86;
+  filter: blur(0.15px) drop-shadow(0 0 12px var(--activity-glow));
+}
+
+.activity-card-corner-glint {
+  position: absolute;
+  pointer-events: none;
+  z-index: 7;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow:
+    0 0 8px rgba(255, 255, 255, 0.86),
+    0 0 18px var(--activity-glow),
+    0 0 34px var(--activity-glow-soft);
+  opacity: 0.72;
+}
+
+.activity-card-corner-glint--top-left {
+  top: 12px;
+  left: 16px;
+}
+
+.activity-card-corner-glint--bottom-right {
+  right: 18px;
+  bottom: 13px;
+}.activity-icon-bubble {
+  
+  
+  
+}
+#root .activity-icon-bubble {
+  border: 1.9px solid rgba(255, 255, 255, 0.54);
+  background: radial-gradient(circle at 30% 18%, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.16) 25%, transparent 43%),
+    radial-gradient(circle at 50% 54%, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.078) 64%, rgba(2, 6, 23, 0.07) 100%);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.2) inset,
+    0 0 24px var(--activity-glow),
+    0 0 48px var(--activity-glow-soft),
+    0 16px 34px rgba(0, 0, 0, 0.28);
+}
+.activity-icon-ring {
+  
+  
+}
+#root .activity-icon-ring {
+  opacity: 0.95;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.44))
+    drop-shadow(0 0 14px var(--activity-glow));
+}
+.activity-card-spark {
+  
+  
+  transform: scale(0.92);
+}
+#root .activity-card-spark {
+  z-index: 7;
+  opacity: 0.76;
+}
+
+
+#root .activity-card-title,
+#root .activity-card-description {
+  text-shadow:
+    0 5px 15px rgba(0, 0, 0, 0.38),
+    0 0 18px rgba(255, 255, 255, 0.11),
+    0 0 28px color-mix(in srgb, var(--activity-glow-soft) 78%, transparent) ;
+}
+
+#root /* Ajustements par couleur : on garde S proche de 96 %, #root mais on évite l'effet fluorescent plat. */
+.activity-select-card[data-activity-theme="lecture-fluence"] {
+  filter: saturate(1.04) brightness(0.98) contrast(1.16) ;
+}
+
+#root .activity-select-card[data-activity-theme="outils-langue"] {
+  filter: saturate(1.05) brightness(0.99) contrast(1.14) ;
+}
+
+#root .activity-select-card[data-activity-theme="lecture"],
+#root .activity-select-card[data-activity-theme="production-ecrite"] {
+  filter: saturate(1.1) brightness(1.02) contrast(1.13) ;
+}
+
+#root .activity-select-card[data-activity-theme="lecture-fluence"]:hover,
+#root .activity-select-card[data-activity-theme="outils-langue"]:hover,
+#root .activity-select-card[data-activity-theme="lecture"]:hover,
+#root .activity-select-card[data-activity-theme="production-ecrite"]:hover,
+#root .activity-select-card[data-activity-theme="lecture-fluence"]:focus-visible,
+#root .activity-select-card[data-activity-theme="outils-langue"]:focus-visible,
+#root .activity-select-card[data-activity-theme="lecture"]:focus-visible,
+#root .activity-select-card[data-activity-theme="production-ecrite"]:focus-visible {
+  filter: saturate(1.14) brightness(1.045) contrast(1.16) ;
+}
+
+@media (max-width: 900px) {
+  .activity-card-floor-glow {
+    bottom: -26px;
+    height: 46px;
+    opacity: 0.58;
+  }
+
+  .activity-card-edge-light {
+    left: 22%;
+    right: 22%;
+  }
+}

@@ -1,0 +1,8 @@
+sed -i 's/function Vocabulary({ unit, onBack, onBackToLevel, unitMeta }: ActivityScreenProps)/function Vocabulary({ unit, onBack, onBackToLevel, unitMeta, tone }: ActivityScreenProps)/g' src/pages/ActivityDetailPage.tsx
+sed -i 's/function SpeechActs({ unit, onBack, onBackToLevel, unitMeta }: ActivityScreenProps)/function SpeechActs({ unit, onBack, onBackToLevel, unitMeta, tone }: ActivityScreenProps)/g' src/pages/ActivityDetailPage.tsx
+sed -i 's/function Listening({ unit, onBack, onBackToLevel, unitMeta }: ActivityScreenProps)/function Listening({ unit, onBack, onBackToLevel, unitMeta, tone }: ActivityScreenProps)/g' src/pages/ActivityDetailPage.tsx
+sed -i 's/function Reading({ unit, onBack, onBackToLevel, unitMeta }: ActivityScreenProps)/function Reading({ unit, onBack, onBackToLevel, unitMeta, tone }: ActivityScreenProps)/g' src/pages/ActivityDetailPage.tsx
+sed -i 's/function Fluency({ unit, onBack, onBackToLevel, unitMeta }: ActivityScreenProps)/function Fluency({ unit, onBack, onBackToLevel, unitMeta, tone }: ActivityScreenProps)/g' src/pages/ActivityDetailPage.tsx
+sed -i 's/function Language({ unit, onBack, onBackToLevel, unitMeta }: ActivityScreenProps)/function Language({ unit, onBack, onBackToLevel, unitMeta, tone }: ActivityScreenProps)/g' src/pages/ActivityDetailPage.tsx
+sed -i 's/function OralProduction({ unit, onBack, onBackToLevel, unitMeta }: ActivityScreenProps)/function OralProduction({ unit, onBack, onBackToLevel, unitMeta, tone }: ActivityScreenProps)/g' src/pages/ActivityDetailPage.tsx
+sed -i 's/function Writing({ unit, onBack, onBackToLevel, unitMeta }: ActivityScreenProps)/function Writing({ unit, onBack, onBackToLevel, unitMeta, tone }: ActivityScreenProps)/g' src/pages/ActivityDetailPage.tsx

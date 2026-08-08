@@ -1,0 +1,6 @@
+{
+  "name": "Français Collège - Mobile App",
+  "description": "Application éducative de Français pour le Collège (1AC, 2AC, 3AC) optimisée Android & smartphone.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

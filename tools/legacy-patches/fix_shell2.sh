@@ -1,0 +1,1 @@
+sed -i 's/mb-2 px-2.5 sm:px-5 py-3 sm:py-4 flex items-center justify-center bg-slate-950\/40 border-b border-slate-800\/50/px-2.5 sm:px-5 py-3 sm:py-4 flex items-center justify-center ${bgStyles[tone]} border-b-0 shadow-lg/g' src/features/activities/activityShared.tsx

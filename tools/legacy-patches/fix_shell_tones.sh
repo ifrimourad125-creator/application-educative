@@ -1,0 +1,2 @@
+sed -i 's/activityId={activity.id}>/activityId={activity.id} tone="violet">/g' src/pages/ActivityDetailPage.tsx
+sed -i 's/activityId={activity.id} tone="violet">/activityId={activity.id} tone={data.category === "Vocabulaire" ? "violet" : data.category === "Actes de parole" ? "emerald" : data.category === "Compréhension orale" ? "orange" : data.category === "Lecture" ? "cyan" : data.category === "Outils de langue" ? "amber" : data.category === "Production orale" ? "emerald" : data.category === "Production écrite" ? "rose" : "cyan"}>/g' src/pages/ActivityDetailPage.tsx

@@ -1,0 +1,99 @@
+Active CSS !important counts
+
+design-v36.css: 397
+activities.css: 296
+level.css: 237
+home-navigation.css: 53
+startup.css: 19
+accessibility.css: 4
+base.css: 0
+activity-detail.css: 0
+
+Top rule groups:
+design-v36.css	15	/* ===== Refonte Navigation Smartphone Mobile Ultramoderne ===== */ .premium-side-nav, .premium-side-nav--single, .premium-side-nav--detail
+design-v36.css	14	.level-page-shell .level-page-content
+design-v36.css	11	.level-page-shell .level-semester-panel
+design-v36.css	9	.level-page-shell .level-semester-grid
+design-v36.css	9	.activity-selection-shell .activity-card-content::after
+design-v36.css	9	.activity-select-card .activity-card-edge-light, .activity-select-card .activity-card-edge-light--top, .activity-select-card .activity-card-edge-light--bottom
+design-v36.css	8	.premium-side-nav .premium-nav-button, .premium-side-nav .premium-nav-button--back, .premium-side-nav .premium-nav-button--level
+design-v36.css	8	.level-page-shell .level-hero-panel
+design-v36.css	8	.home-premium-shell .home-level-line
+design-v36.css	8	.home-premium-shell .home-card-sweep
+design-v36.css	7	.level-page-shell .premium-side-nav, .activity-selection-shell .premium-side-nav, .activity-detail-shell .premium-side-nav, .premium-side-nav--single, .premium-side-nav--detail
+design-v36.css	7	.level-page-shell .level-semester-stage
+design-v36.css	6	.premium-side-nav .premium-nav-button, .premium-side-nav .premium-nav-button--back, .premium-side-nav .premium-nav-button--level, .sound-toggle--side, .sound-toggle--detail
+design-v36.css	6	.level-page-shell .level-hero-wrap
+design-v36.css	6	.home-hero-edge--top, .home-hero-edge--bottom, .hero-glow-line, .activity-card-edge-light--top, .activity-card-edge-light--bottom
+design-v36.css	5	.premium-side-nav .premium-nav-button__label
+design-v36.css	5	.level-page-shell .level-unit-card
+design-v36.css	5	.level-page-shell .level-unit-card
+design-v36.css	5	.level-page-shell .level-semester-grid
+design-v36.css	5	.level-page-shell .level-semester-backdrop
+activities.css	9	/* Lumière basse interne, visible même au repos. */ .activity-card-glow
+activities.css	8	/* L'ancienne lumière interne devient une lueur basse plus fine dans la carte. */ .activity-card-glow
+activities.css	7	.home-level-icon-wrap::before, .premium-nav-button__icon::before, .premium-final-action__icon::before, .level-icon-bubble::before
+activities.css	6	/* Cercles contenant les icônes : verre plus clair, contour plus fin, effet conservé. */ .home-level-icon-wrap, .activity-icon-bubble, .premium-nav-button__icon, .premium-final-action__icon, .level-icon-bubble
+activities.css	6	/* Boutons navigation : plus fins, toujours glass et créatifs. */ .premium-nav-button, .premium-final-action
+activities.css	6	.home-premium-content
+activities.css	6	.home-level-icon-wrap::after, .premium-nav-button__icon::after, .premium-final-action__icon::after, .level-icon-bubble::after
+activities.css	6	.home-hero-panel
+activities.css	6	.activity-card-glow
+activities.css	5	body
+activities.css	5	/* Contour néon plus lisible : deux lignes fines, pas une grosse bordure opaque. */ .activity-select-card .premium-gradient-border--activity, .activity-select-card .premium-gradient-border
+activities.css	5	/* Accueil : tout doit tenir comme un écran d'application, sans titre coupé ni vide noir. */ .home-premium-shell
+activities.css	5	/* ===== V7 — cartes d'activités premium : halo réel, contour néon et reflets naturels ===== Ciblé uniquement sur la page des activités. La page d'accueil et les cartes de niveaux gardent le rendu validé. Objectif : rapprocher les rectangle
+activities.css	5	/* ===== V20 — confort final : un seul scroll, Aurora plus nette, cercles glass affinés ===== */ html
+activities.css	5	.home-title
+activities.css	5	.activity-select-card
+activities.css	4	html::-webkit-scrollbar, body::-webkit-scrollbar, #root::-webkit-scrollbar, .home-premium-shell::-webkit-scrollbar, .activity-selection-shell::-webkit-scrollbar, *::-webkit-scrollbar
+activities.css	4	/* Reflet intégré : plus de grosse tache et moins de bande diagonale graphique. */ .activity-card-glass
+activities.css	4	/* Reflet interne doux : aucune tache ronde agressive. */ .activity-card-glass
+activities.css	4	/* ===== V5 — dégradés visibles + contours lumineux permanents ===== Saturation HSL autour de 96 %, écart de clarté plus fort et contour néon pour éviter l'effet aplat / couleur unie. */ .activity-select-card
+level.css	6	/* Cartes sélectionnées : titres premium, lisibles, jamais massifs. */ .level-page-shell .level-page-title, .activity-selection-shell .activity-unit-hero h1, .level-page-title
+level.css	5	/* Page niveau : plus compacte pour un écran applicatif, sans impression de contenu coupé. */ .level-page-shell
+level.css	5	/* Les petites étoiles décoratives sur les cartes deviennent des points très fins. */ .home-card-star, .activity-card-spark
+level.css	5	/* Cercles d'icônes : verre plus clair, contour fin, reflet visible sans épaisseur. */ .home-level-icon-wrap, .activity-icon-bubble, .level-icon-bubble, .premium-nav-button__icon, .premium-final-action__icon
+level.css	5	/* Bouton retour : un peu plus fin et moins envahissant. */ .premium-nav-button, .premium-final-action
+level.css	5	/* Accueil : cartes un peu plus présentes, sans recréer de barre de scroll visible. */ .home-premium-content
+level.css	5	.level-page-shell .level-page-title
+level.css	5	.home-level-name
+level.css	5	.home-level-icon-wrap
+level.css	5	.home-level-arrow
+level.css	4	/* Semestres / unités : fenêtre plus compacte, mais scroll possible si l’écran est bas. */ .level-page-shell
+level.css	4	/* Nav : un peu plus fin, mais toujours identifiable. */ .premium-nav-button, .premium-final-action
+level.css	4	/* Les interfaces restent scrollables si le contenu dépasse, mais sans barre visible. */ .level-page-shell, .activity-selection-shell, .home-premium-shell
+level.css	4	/* ===== Polissage final : contours partout, étoiles fines, équilibre accueil/semestres ===== */ /* Fond applicatif : étoiles très fines comme la référence, sans gros glyphes visibles. */ .home-space-layer--stars, .activity-stars-layer
+level.css	4	.level-unit-card h3
+level.css	4	.level-page-title, .level-page-shell .level-page-title, .activity-hero-title
+level.css	4	.level-page-shell .relative.overflow-hidden.rounded-\[40px\], .activity-unit-hero
+level.css	4	.home-premium-content
+level.css	4	.app-shell-scroll, .home-premium-shell, .level-page-shell, .activity-selection-shell
+level.css	3	html::-webkit-scrollbar, body::-webkit-scrollbar, #root::-webkit-scrollbar, .home-premium-shell::-webkit-scrollbar, .activity-selection-shell::-webkit-scrollbar, .level-page-shell::-webkit-scrollbar, .activity-detail-shell::-webkit-scrollba
+home-navigation.css	4	.home-planet--left
+home-navigation.css	3	.premium-nav-button, .premium-final-action
+home-navigation.css	3	.home-title
+home-navigation.css	3	.home-planet--right
+home-navigation.css	3	.home-hero-panel
+home-navigation.css	2	.premium-nav-button:hover, .premium-nav-button:focus-visible, .premium-final-action:hover, .premium-final-action:focus-visible
+home-navigation.css	2	.premium-final-action--restart
+home-navigation.css	2	.home-space-layer--rays
+home-navigation.css	2	.home-light-orb
+home-navigation.css	2	.home-level-icon, .home-level-card:hover .home-level-icon, .home-level-card:focus-visible .home-level-icon
+home-navigation.css	2	.home-level-card--3ac
+home-navigation.css	2	.home-level-card--2ac
+home-navigation.css	2	.home-level-card--1ac
+home-navigation.css	2	.home-level-arrow
+home-navigation.css	1	/* ===== V18 — Aurora Background, lueur par carte et boutons glass harmonisés ===== */ .home-premium-shell
+home-navigation.css	1	/* ===== V17 — contraste accueil, lueurs vives, anneaux rotatifs visibles ===== */ .home-premium-shell
+home-navigation.css	1	.premium-nav-button__label, .premium-final-action__label
+home-navigation.css	1	.premium-nav-button:hover .premium-nav-button__icon, .premium-nav-button:focus-visible .premium-nav-button__icon, .premium-final-action--restart:hover .premium-final-action__icon, .premium-final-action--restart:focus-visible .premium-final-
+home-navigation.css	1	.premium-nav-button, .premium-final-action
+home-navigation.css	1	.premium-final-action--restart:hover, .premium-final-action--restart:focus-visible
+startup.css	9	/* ===== V10 — bouton Son : même famille glass, plus précis et moins brumeux ===== */ .sound-toggle
+startup.css	3	.sound-toggle__glow
+startup.css	3	.sound-toggle__dot
+startup.css	2	.sound-toggle__text
+startup.css	1	.sound-toggle__icon
+startup.css	1	.sound-toggle:hover
+accessibility.css	4	*, *::before, *::after
