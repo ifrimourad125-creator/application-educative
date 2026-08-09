@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+@import "./styles/tokens.css";
+@import "./styles/base.css";
+@import "./styles/design-v36.css";
+@import "./styles/home-navigation.css";
+@import "./styles/level.css";
+@import "./styles/activities.css";
+@import "./styles/activity-detail.css";
+@import "./styles/startup.css";
+
+@import "./styles/accessibility.css";

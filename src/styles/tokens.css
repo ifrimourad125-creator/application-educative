@@ -1,0 +1,11 @@
+:root {
+  /* Canonical design tokens. Existing components keep their current values.
+     These tokens are intentionally additive so the current design remains unchanged. */
+  --app-font-sans: ui-sans-serif, system-ui, sans-serif;
+  --app-radius-sm: 0.5rem;
+  --app-radius-md: 0.75rem;
+  --app-radius-lg: 1rem;
+  --app-radius-xl: 1.5rem;
+  --app-transition-fast: 150ms;
+  --app-transition-base: 300ms;
+}

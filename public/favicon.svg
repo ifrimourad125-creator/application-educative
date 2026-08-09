@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <radialGradient id="orbBg" cx="50%" cy="45%" r="50%">
+      <stop offset="0%" stop-color="#0e2348" />
+      <stop offset="60%" stop-color="#06122b" />
+      <stop offset="100%" stop-color="#00030a" />
+    </radialGradient>
+    <linearGradient id="neonRingGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f0ff" />
+      <stop offset="100%" stop-color="#0072ff" />
+    </linearGradient>
+    <linearGradient id="iStemGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+    <radialGradient id="iDotGrad" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#ffea79" />
+      <stop offset="100%" stop-color="#d94600" />
+    </radialGradient>
+    <linearGradient id="mLeftGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff7b00" />
+      <stop offset="100%" stop-color="#d90082" />
+    </linearGradient>
+    <linearGradient id="mMidGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d90082" />
+      <stop offset="100%" stop-color="#4a00e0" />
+    </linearGradient>
+    <linearGradient id="mRightGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8a2be2" />
+      <stop offset="100%" stop-color="#00d2ff" />
+    </linearGradient>
+    <linearGradient id="capTopGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#1e1b4b" />
+    </linearGradient>
+    <linearGradient id="tasselGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a" />
+      <stop offset="100%" stop-color="#b45309" />
+    </linearGradient>
+  </defs>
+
+  <rect width="512" height="512" fill="#000000" rx="999" />
+  <circle cx="256" cy="256" r="210" fill="url(#orbBg)" stroke="url(#neonRingGrad)" stroke-width="5" />
+
+  <g transform="translate(0, 8)">
+    <circle cx="162" cy="192" r="19" fill="url(#iDotGrad)" />
+    <rect x="144" y="222" width="36" height="152" rx="18" fill="url(#iStemGrad)" />
+
+    <path d="M 200 374 L 200 236 C 200 215 220 210 238 230 L 268 275 C 274 284 282 284 288 275 L 318 230 C 336 210 356 215 356 236 L 356 374"
+          fill="none" stroke="url(#mLeftGrad)" stroke-width="36" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M 232 232 L 272 290 C 276 296 280 296 284 290 L 324 232"
+          fill="none" stroke="url(#mMidGrad)" stroke-width="32" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M 284 282 L 320 230 C 334 212 352 218 352 236 L 352 374"
+          fill="none" stroke="url(#mRightGrad)" stroke-width="34" stroke-linecap="round" stroke-linejoin="round" />
+
+    <g transform="translate(270, 158)">
+      <polygon points="0,-28 85,4 0,36 -85,4" fill="url(#capTopGrad)" stroke="#60a5fa" stroke-width="3" />
+      <text x="0" y="8" font-family="monospace, sans-serif" font-weight="900" font-size="20" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">&lt;/&gt;</text>
+      <circle cx="0" cy="4" r="5" fill="#f59e0b" />
+      <path d="M 0 4 C 30 6 62 18 68 32" fill="none" stroke="url(#tasselGrad)" stroke-width="3.5" stroke-linecap="round" />
+      <polygon points="64,36 72,36 75,58 61,58" fill="url(#tasselGrad)" />
+    </g>
+  </g>
+</svg>

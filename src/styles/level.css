@@ -1,0 +1,1298 @@
+/* ===== Polissage final : contours permanents, étoiles fines, aucune barre visible ===== */
+html,
+body,
+#root,
+.home-premium-shell,
+.activity-selection-shell,
+.level-page-shell {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+#root::-webkit-scrollbar,
+.home-premium-shell::-webkit-scrollbar,
+.activity-selection-shell::-webkit-scrollbar,
+.level-page-shell::-webkit-scrollbar,
+.activity-detail-shell::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+  display: none !important;
+}
+
+body {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.home-premium-content {
+  min-height: 100vh;
+  justify-content: flex-start;
+  padding-top: clamp(1.45rem, 2.8vh, 2.25rem);
+  padding-bottom: clamp(1.45rem, 2.8vh, 2.25rem);
+  gap: clamp(1.5rem, 3.2vh, 2.6rem);
+}
+
+.home-hero-panel {
+  width: min(760px, 100%);
+  padding: clamp(1.35rem, 2.5vh, 2rem) clamp(1.8rem, 4.6vw, 3.6rem);
+  border-width: 1.45px;
+}
+
+.home-title {
+  font-size: clamp(3rem, 5vw, 5rem);
+  letter-spacing: -0.072em;
+}
+
+.home-subtitle {
+  margin-top: 0.8rem;
+  font-size: clamp(1.08rem, 1.6vw, 1.55rem);
+}
+
+.home-level-grid {
+  gap: clamp(1.5rem, 3vw, 2.35rem);
+}
+
+.home-level-card {
+  min-height: clamp(270px, 31vh, 330px);
+  border: 1.5px solid rgba(255, 255, 255, 0.56);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.16) inset,
+    0 0 0 2px rgba(255, 255, 255, 0.08) inset,
+    0 24px 62px rgba(0, 0, 0, 0.5);
+}
+
+.home-level-card--1ac {
+  box-shadow:
+    0 0 0 1.5px rgba(207, 250, 254, 0.72) inset,
+    0 0 0 1px rgba(255, 255, 255, 0.14),
+    0 0 24px rgba(34, 211, 238, 0.3),
+    0 18px 48px rgba(0, 0, 0, 0.38);
+}
+
+.home-level-card--2ac {
+  box-shadow:
+    0 0 0 1.5px rgba(251, 207, 232, 0.72) inset,
+    0 0 0 1px rgba(255, 255, 255, 0.14),
+    0 0 24px rgba(236, 72, 153, 0.28),
+    0 18px 48px rgba(0, 0, 0, 0.38);
+}
+
+.home-level-card--3ac {
+  box-shadow:
+    0 0 0 1.5px rgba(254, 249, 195, 0.76) inset,
+    0 0 0 1px rgba(255, 255, 255, 0.14),
+    0 0 24px rgba(251, 191, 36, 0.3),
+    0 18px 48px rgba(0, 0, 0, 0.38);
+}
+
+.home-level-card:hover,
+.home-level-card:focus-visible {
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.28) inset,
+    0 0 0 2px rgba(255, 255, 255, 0.14) inset,
+    0 0 32px rgba(255, 255, 255, 0.15),
+    0 26px 64px rgba(0, 0, 0, 0.55);
+}
+
+.home-card-star {
+  top: 34%;
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.88);
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.55);
+  opacity: 0.92;
+}
+
+.home-card-star--left {
+  left: 26%;
+}
+.home-card-star--right {
+  right: 26%;
+}
+
+.home-level-icon-wrap {
+  width: clamp(5.3rem, 7vw, 6.6rem);
+  height: clamp(5.3rem, 7vw, 6.6rem);
+  margin: 0.9rem auto 1.6rem;
+  border-width: 1.35px;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.16) inset,
+    0 0 18px rgba(255, 255, 255, 0.14),
+    0 14px 28px rgba(0, 0, 0, 0.2);
+}
+
+.home-level-short {
+  font-size: clamp(4rem, 6.8vw, 5.4rem);
+}
+
+.home-level-line {
+  margin: 0.92rem auto 0.62rem;
+}
+
+.home-level-name {
+  font-size: clamp(1rem, 1.28vw, 1.18rem);
+  line-height: 1.08;
+}
+
+.home-level-arrow {
+  width: 2.55rem;
+  height: 2.55rem;
+  margin-top: 1.05rem;
+}.activity-unit-hero {
+  
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.1) inset,
+    0 0 22px rgba(56, 189, 248, 0.14),
+    0 18px 44px rgba(0, 0, 0, 0.3);
+}
+#root .activity-unit-hero {
+  border-width: 1.4px;
+}
+
+
+.activity-select-card {
+  
+  
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.1) inset,
+    0 0 22px var(--activity-glow-soft),
+    0 18px 44px rgba(0, 0, 0, 0.36);
+}
+
+.activity-select-card:hover,
+.activity-select-card:focus-visible {
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.16) inset,
+    0 0 30px var(--activity-glow-soft),
+    0 24px 54px rgba(0, 0, 0, 0.4);
+}
+
+.activity-card-spark {
+  top: 32%;
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.88);
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.48);
+}
+
+.activity-card-spark--left {
+  left: 20%;
+}
+.activity-card-spark--right {
+  right: 20%;
+}
+
+#root .activity-icon-bubble,
+#root .level-icon-bubble {
+  border-width: 1.25px ;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.12) inset,
+    0 10px 24px rgba(0, 0, 0, 0.22),
+    0 0 16px rgba(255, 255, 255, 0.08);
+}
+
+.level-page-shell {
+  padding: 1.5rem 1.5rem 2rem;
+}
+
+#root .level-page-shell > .relative.z-10.max-w-7xl.mx-auto.pt-32.md\:pt-36 {
+  padding-top: 6rem ;
+}.level-semester-panel {
+  
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.08) inset,
+    0 0 20px rgba(255, 255, 255, 0.06),
+    0 16px 42px rgba(0, 0, 0, 0.28);
+}
+#root .level-semester-panel {
+  border-width: 1.45px;
+}
+
+
+.level-unit-card {
+  
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.04) inset,
+    0 12px 26px rgba(0, 0, 0, 0.22);
+}
+
+.level-unit-card:hover,
+.level-unit-card:focus-visible {
+  
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.08) inset,
+    0 16px 34px rgba(0, 0, 0, 0.28),
+    0 0 18px rgba(255, 255, 255, 0.06);
+}
+
+.level-icon-bubble--hero {
+  width: 5rem;
+  height: 5rem;
+}
+
+.level-icon-bubble--unit {
+  width: 4.85rem;
+  height: 4.85rem;
+}
+
+@media (max-width: 980px) {
+  .home-premium-content {
+    justify-content: flex-start;
+  }
+
+  .home-level-card {
+    min-height: 255px;
+  }
+}
+
+@media (max-width: 640px) {
+  .home-level-card {
+    min-height: 240px;
+  }
+
+  .home-card-star,
+  .activity-card-spark {
+    font-size: 0.56rem;
+  }
+
+  .home-level-icon-wrap {
+    margin-bottom: 1.25rem;
+  }
+}
+
+#root /* ===== Polissage final : contours partout, #root étoiles fines, #root équilibre accueil/semestres ===== */
+/* Fond applicatif : étoiles très fines comme la référence, #root sans gros glyphes visibles. */
+.home-space-layer--stars,
+#root .activity-stars-layer {
+  opacity: 0.34 ;
+  background-image:
+    radial-gradient(circle, rgba(255, 255, 255, 0.72) 0 0.55px, transparent 0.78px),
+    radial-gradient(circle, rgba(103, 232, 249, 0.58) 0 0.48px, transparent 0.76px),
+    radial-gradient(circle, rgba(216, 180, 254, 0.5) 0 0.45px, transparent 0.72px) ;
+  background-position:
+    18px 34px,
+    126px 96px,
+    76px 164px ;
+  background-size:
+    220px 220px,
+    310px 310px,
+    390px 390px ;
+}
+
+#root /* Les petites étoiles décoratives sur les cartes deviennent des points très fins. */
+.home-card-star,
+#root .activity-card-spark {
+  font-size: 0.58rem ;
+  line-height: 1 ;
+  opacity: 0.68 ;
+  color: rgba(255, 255, 255, 0.78) ;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.45) ;
+}.home-card-star--left {
+  
+}
+#root .home-card-star--left {
+  left: 26.5%;
+}
+.home-card-star--right {
+  
+}
+#root .home-card-star--right {
+  right: 25.5%;
+}
+.activity-card-spark--left {
+  
+}
+#root .activity-card-spark--left {
+  left: 21%;
+}
+.activity-card-spark--right {
+  
+}
+#root .activity-card-spark--right {
+  right: 21%;
+}
+
+
+#root /* Accueil : meilleur équilibre interne des cartes, #root flèche séparée du sous-titre. */
+.home-premium-content {
+  gap: clamp(1.35rem, 2.8vh, 2.2rem) ;
+}
+
+.home-level-grid {
+  
+}#root .home-level-card {
+  
+  
+  border: 1.55px solid rgba(255, 255, 255, 0.72) ;
+  
+}
+#root .home-level-card {
+  padding: clamp(1rem, 1.8vh, 1.25rem) clamp(1.15rem, 2vw, 1.55rem) clamp(4.35rem, 7.1vh, 5.05rem);
+}
+
+
+#root .home-level-card::before {
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.26),
+    transparent 30%,
+    rgba(255, 255, 255, 0.1) 68%,
+    transparent 100%
+  ) ;
+}#root .home-level-icon-wrap {
+  margin: clamp(0.55rem, 1.1vh, 0.85rem) auto clamp(1.05rem, 1.8vh, 1.35rem) ;
+  
+  
+  
+  
+}
+#root .home-level-icon-wrap {
+  border-width: 1.25px;
+  background: radial-gradient(
+    circle at 50% 34%,
+    rgba(255, 255, 255, 0.24),
+    rgba(255, 255, 255, 0.105) 55%,
+    rgba(255, 255, 255, 0.055) 100%
+  );
+  box-shadow: 0 0 0 0.75px rgba(255, 255, 255, 0.18) inset,
+    0 0 18px rgba(255, 255, 255, 0.18),
+    0 17px 30px rgba(0, 0, 0, 0.24);
+  backdrop-filter: blur(20px) saturate(1.55);
+}
+
+
+#root .home-level-short {
+  font-size: clamp(3.35rem, 5.85vw, 5.05rem) ;
+  line-height: 0.88 ;
+}
+
+#root .home-level-line {
+  margin: clamp(0.68rem, 1.2vh, 0.9rem) auto clamp(0.5rem, 0.85vh, 0.65rem) ;
+}
+
+.home-level-name {
+  
+  
+  
+}#root .home-level-arrow {
+  
+  
+  
+  margin: 0 ;
+  
+  
+  
+  
+}
+#root .home-level-arrow {
+  position: absolute;
+  left: 50%;
+  translate: -50% 0;
+  border-width: 1.15px;
+}
+
+
+#root .home-level-card:hover .home-level-arrow,
+#root .home-level-card:focus-visible .home-level-arrow {
+  transform: translateX(3px) scale(1.06) ;
+}
+
+#root /* Contours permanents, #root visibles au repos et plus lumineux au survol. */
+.home-hero-panel,
+#root .activity-unit-hero,
+#root .level-semester-panel,
+#root .level-unit-card,
+#root .activity-select-card,
+#root .rounded-\[30px\].border-2,
+#root .rounded-\[26px\].border,
+#root .rounded-\[24px\].border,
+#root .rounded-3xl.border {
+  border-color: rgba(226, 246, 255, 0.34) ;
+  box-shadow:
+    0 0 0 0.75px rgba(255, 255, 255, 0.12) inset,
+    0 16px 42px rgba(0, 0, 0, 0.3) ;
+}
+
+#root .home-hero-panel,
+#root .activity-unit-hero {
+  border-color: rgba(186, 230, 253, 0.58) ;
+}
+
+.level-semester-panel {
+  
+  
+}.level-unit-card {
+  
+  
+  
+}
+#root .level-unit-card {
+  border: 1.25px solid rgba(226, 246, 255, 0.2);
+  transition: transform 260ms ease,
+    border-color 260ms ease,
+    box-shadow 260ms ease,
+    background 260ms ease;
+}
+
+
+#root .level-unit-card:hover,
+#root .level-unit-card:focus-visible {
+  border-color: rgba(226, 246, 255, 0.44) ;
+  
+}
+
+.activity-select-card {
+  
+  
+}
+
+.activity-select-card:hover,
+.activity-select-card:focus-visible {
+  
+}
+
+#root /* Page niveau : plus compacte pour un écran applicatif, #root sans impression de contenu coupé. */
+.level-page-shell {
+  height: 100dvh ;
+  min-height: 100dvh ;
+  max-height: 100dvh ;
+  overflow: hidden ;
+  padding: clamp(0.85rem, 2vh, 1.25rem) clamp(1.1rem, 2.2vw, 2rem) ;
+}
+
+.level-page-shell > .relative.z-10.max-w-7xl {
+  
+}
+
+#root .level-page-shell .flex.justify-center.mb-16 {
+  margin-bottom: clamp(1.25rem, 3.1vh, 2.1rem) ;
+}
+
+#root .level-page-shell .level-page-title {
+  font-size: clamp(2.45rem, 4.2vw, 4rem) ;
+  line-height: 1.08 ;
+  font-weight: 830 ;
+  letter-spacing: -0.015em ;
+  word-spacing: 0.1em ;
+}
+
+#root .level-page-shell .grid.xl\:grid-cols-2 {
+  gap: clamp(1.45rem, 2.8vw, 2.6rem) ;
+}#root .level-semester-panel {
+  padding: clamp(1.25rem, 2.3vw, 1.8rem) ;
+  
+}
+#root .level-semester-panel {
+  border-radius: clamp(1.55rem, 2.6vw, 2rem);
+}
+
+
+#root .level-semester-panel .mb-10 {
+  margin-bottom: clamp(1rem, 2vh, 1.45rem) ;
+}
+
+#root .level-semester-panel h2 {
+  font-size: clamp(2rem, 3.1vw, 3.1rem) ;
+  line-height: 1.05 ;
+  font-weight: 850 ;
+}
+
+#root .level-semester-panel .flex.flex-col.gap-5 {
+  gap: clamp(0.82rem, 1.55vh, 1.05rem) ;
+}#root .level-unit-card {
+  padding: clamp(1rem, 2vh, 1.35rem) ;
+  
+}
+#root .level-unit-card {
+  border-radius: clamp(1.2rem, 2.2vw, 1.55rem);
+}
+
+
+#root .level-unit-card .gap-5 {
+  gap: clamp(0.95rem, 1.8vw, 1.25rem) ;
+}
+
+#root .level-unit-card p {
+  font-size: clamp(0.98rem, 1.15vw, 1.13rem) ;
+  margin-bottom: 0.35rem ;
+}
+
+#root .level-unit-card h3 {
+  font-size: clamp(1.15rem, 1.55vw, 1.55rem) ;
+  line-height: 1.18 ;
+  font-weight: 840 ;
+  letter-spacing: -0.015em ;
+}
+
+#root .level-icon-bubble--hero {
+  width: clamp(4.7rem, 6.8vw, 5.6rem) ;
+  height: clamp(4.7rem, 6.8vw, 5.6rem) ;
+  font-size: clamp(2.75rem, 4.2vw, 3.25rem) ;
+}
+
+#root .level-icon-bubble--unit {
+  width: clamp(4.05rem, 5.5vw, 4.55rem) ;
+  height: clamp(4.05rem, 5.5vw, 4.55rem) ;
+  font-size: clamp(2.35rem, 3.25vw, 2.75rem) ;
+}
+
+#root /* Cercles d'icônes : verre plus clair, #root contour fin, #root reflet visible sans épaisseur. */
+.home-level-icon-wrap,
+#root .activity-icon-bubble,
+#root .level-icon-bubble,
+#root .premium-nav-button__icon,
+#root .premium-final-action__icon {
+  border-width: 1.1px ;
+  border-color: rgba(240, 249, 255, 0.38) ;
+  background: radial-gradient(
+    circle at 43% 26%,
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0.12) 48%,
+    rgba(255, 255, 255, 0.055) 100%
+  ) ;
+  box-shadow:
+    0 0 0 0.75px rgba(255, 255, 255, 0.14) inset,
+    0 0 15px rgba(255, 255, 255, 0.12),
+    0 14px 28px rgba(0, 0, 0, 0.24) ;
+  backdrop-filter: blur(18px) saturate(1.52) ;
+}
+
+#root .home-level-icon-wrap::before,
+#root .premium-nav-button__icon::before,
+#root .premium-final-action__icon::before,
+#root .level-icon-bubble::before,
+#root .activity-icon-ring {
+  opacity: 0.56 ;
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.18)) ;
+}
+
+#root .home-level-card:hover .home-level-icon-wrap::before,
+#root .home-level-card:focus-visible .home-level-icon-wrap::before,
+#root .activity-select-card:hover .activity-icon-ring,
+#root .activity-select-card:focus-visible .activity-icon-ring,
+#root .level-unit-card:hover .level-icon-bubble::before,
+#root .level-unit-card:focus-visible .level-icon-bubble::before,
+#root .premium-nav-button:hover .premium-nav-button__icon::before,
+#root .premium-nav-button:focus-visible .premium-nav-button__icon::before,
+#root .premium-final-action:hover .premium-final-action__icon::before,
+#root .premium-final-action:focus-visible .premium-final-action__icon::before {
+  opacity: 0.9 ;
+}
+
+#root /* Bouton retour : un peu plus fin et moins envahissant. */
+.premium-nav-button,
+#root .premium-final-action {
+  width: 98px ;
+  min-height: 98px ;
+  border-radius: 26px ;
+  border-width: 1.1px ;
+  box-shadow:
+    0 0 0 0.75px rgba(255, 255, 255, 0.13) inset,
+    0 12px 28px rgba(0, 0, 0, 0.32) ;
+}
+
+.premium-nav-button__icon,
+.premium-final-action__icon {
+  
+  
+}
+
+.premium-nav-button__label,
+.premium-final-action__label {
+  
+  
+}
+
+@media (max-height: 760px) {#root .home-level-card {
+    min-height: 250px ;
+    
+  }
+#root .home-level-card {
+  padding-bottom: 4rem;
+}
+#root .home-level-icon-wrap {
+    width: 4.9rem ;
+    height: 4.9rem ;
+    
+  }
+#root .home-level-icon-wrap {
+  margin-bottom: 0.9rem;
+}
+
+
+  #root .home-level-short {
+    font-size: clamp(3.15rem, 5.2vw, 4.6rem) ;
+  }
+
+  #root .level-page-shell > .relative.z-10.max-w-7xl {
+    padding-top: 5.35rem ;
+  }
+
+  #root .level-semester-panel {
+    padding: 1rem ;
+  }
+
+  #root .level-unit-card {
+    padding: 0.86rem 1rem ;
+  }
+}
+
+/* ===== Proportions finales, titres harmonisés, scroll applicatif invisible ===== */
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden !important;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+#root::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+  display: none !important;
+}
+
+#root /* Les interfaces restent scrollables si le contenu dépasse, #root mais sans barre visible. */
+.level-page-shell,
+#root .activity-selection-shell,
+#root .home-premium-shell {
+  overflow-x: hidden ;
+  overflow-y: auto ;
+  scrollbar-width: none ;
+  -ms-overflow-style: none ;
+}
+
+#root .level-page-shell::-webkit-scrollbar,
+#root .activity-selection-shell::-webkit-scrollbar,
+#root .home-premium-shell::-webkit-scrollbar {
+  display: none ;
+  width: 0 ;
+}
+
+#root /* Accueil : cartes un peu plus présentes, #root sans recréer de barre de scroll visible. */
+.home-premium-content {
+  width: min(1500px, calc(100% - 2.4rem)) ;
+  min-height: 100dvh ;
+  padding-top: clamp(1.7rem, 3.4vh, 3.3rem) ;
+  padding-bottom: clamp(1.55rem, 3.2vh, 3.1rem) ;
+  gap: clamp(2.1rem, 4.7vh, 3.8rem) ;
+}
+
+#root .home-hero-panel {
+  border-color: rgba(205, 238, 255, 0.64) ;
+  box-shadow:
+    0 0 0 0.85px rgba(255, 255, 255, 0.16) inset,
+    0 0 30px rgba(56, 189, 248, 0.3),
+    0 0 58px rgba(168, 85, 247, 0.2),
+    0 24px 62px rgba(0, 0, 0, 0.44) ;
+}
+
+#root .home-level-grid {
+  gap: clamp(2.15rem, 4.2vw, 4.35rem) ;
+}
+
+#root .home-level-card {
+  min-height: clamp(330px, 38vh, 408px) ;
+  border-radius: 2.2rem ;
+  box-shadow:
+    0 0 0 1.45px rgba(255, 255, 255, 0.7) inset,
+    0 0 18px var(--home-border-glow, rgba(255, 255, 255, 0.2)),
+    0 30px 78px rgba(0, 0, 0, 0.42) ;
+}
+
+.home-level-card--1ac {
+  --home-border-glow: rgba(56, 189, 248, 0.34);
+}
+.home-level-card--2ac {
+  --home-border-glow: rgba(236, 72, 153, 0.34);
+}
+.home-level-card--3ac {
+  --home-border-glow: rgba(251, 191, 36, 0.38);
+}
+
+#root .home-level-card:hover,
+#root .home-level-card:focus-visible {
+  box-shadow:
+    0 0 0 1.55px rgba(255, 255, 255, 0.86) inset,
+    0 0 24px var(--home-border-glow, rgba(255, 255, 255, 0.26)),
+    0 30px 84px rgba(0, 0, 0, 0.48) ;
+}#root .home-level-name {
+  
+  margin-bottom: 0.85rem ;
+  
+  font-size: clamp(1.05rem, 1.5vw, 1.32rem) ;
+  
+}
+#root .home-level-name {
+  margin-top: 0.05rem;
+  display: block;
+  line-height: 1.15;
+}
+
+
+#root .home-level-arrow {
+  bottom: clamp(1.25rem, 2.15vh, 1.75rem) ;
+  width: clamp(2.35rem, 3.05vw, 2.75rem) ;
+  height: clamp(2.35rem, 3.05vw, 2.75rem) ;
+}
+
+#root /* Cartes sélectionnées : titres premium, #root lisibles, #root jamais massifs. */
+.level-page-shell .level-page-title,
+#root .activity-selection-shell .activity-unit-hero h1,
+#root .level-page-title {
+  font-size: clamp(2.05rem, 3.45vw, 3.3rem) ;
+  line-height: 1.12 ;
+  font-weight: 800 ;
+  letter-spacing: -0.022em ;
+  word-spacing: 0.13em ;
+  text-wrap: balance;
+  max-width: min(100%, 960px) ;
+}
+
+#root .level-page-shell .text-cyan-300,
+#root .activity-selection-shell .activity-unit-hero p {
+  font-size: clamp(1rem, 1.35vw, 1.24rem) ;
+  font-weight: 850 ;
+  letter-spacing: -0.012em ;
+}
+
+#root .level-page-shell .flex.justify-center.mb-16,
+#root .activity-selection-shell .flex.justify-center.mb-14 {
+  margin-bottom: clamp(1.45rem, 3vh, 2.4rem) ;
+}
+
+#root .level-page-shell .relative.overflow-hidden.rounded-\[40px\],
+#root .activity-unit-hero {
+  padding: clamp(1.3rem, 2.55vh, 2.05rem) clamp(2rem, 4.4vw, 3.8rem) ;
+  border-width: 1.3px ;
+  border-color: rgba(186, 230, 253, 0.56) ;
+  box-shadow:
+    0 0 0 0.75px rgba(255, 255, 255, 0.12) inset,
+    0 18px 46px rgba(0, 0, 0, 0.34) ;
+}
+
+#root /* Semestres / unités : fenêtre plus compacte, #root mais scroll possible si l’écran est bas. */
+.level-page-shell {
+  height: 100dvh ;
+  max-height: 100dvh ;
+  overflow-y: auto ;
+  padding: clamp(0.75rem, 1.8vh, 1.15rem) clamp(1rem, 2vw, 1.8rem) ;
+}
+
+#root .level-page-shell > .relative.z-10.max-w-7xl {
+  padding-top: clamp(5.4rem, 10vh, 6.9rem) ;
+  padding-bottom: clamp(1.2rem, 2.5vh, 2rem) ;
+}.activity-selection-shell {
+  
+  
+  
+}
+#root .activity-selection-shell {
+  height: 100dvh;
+  max-height: 100dvh;
+  overflow-y: auto;
+}
+
+
+#root .activity-selection-shell > .relative.z-10.max-w-7xl {
+  padding-top: clamp(5.5rem, 10vh, 7rem) ;
+  padding-bottom: clamp(1.5rem, 3vh, 2.4rem) ;
+}
+
+#root /* Contours permanents plus nets, #root fins et cohérents avec la couleur de la carte. */
+.level-semester-panel,
+#root .level-unit-card,
+#root .activity-select-card,
+#root .home-level-card {
+  border-style: solid ;
+}
+
+.level-semester-panel {
+  
+}
+
+#root .level-semester-panel:nth-of-type(2),
+#root .level-page-shell .grid.xl\:grid-cols-2 > *:nth-child(2) {
+  border-color: rgba(244, 114, 182, 0.42) ;
+}
+
+.level-unit-card {
+  
+}#root .activity-select-card {
+  border-width: 1.3px ;
+  
+  box-shadow:
+    0 0 0 0.7px rgba(255, 255, 255, 0.16) inset,
+    0 0 14px var(--activity-glow-soft),
+    0 22px 52px rgba(0, 0, 0, 0.32) ;
+}
+#root .activity-select-card {
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+
+#root .activity-select-card:hover,
+#root .activity-select-card:focus-visible {
+  border-color: rgba(255, 255, 255, 0.86) ;
+  
+}
+
+#root /* Étoiles : points très fins, #root discrets, #root proches de la référence. */
+.home-space-layer--stars,
+#root .activity-stars-layer {
+  opacity: 0.46 ;
+  background-image:
+    radial-gradient(circle, rgba(255, 255, 255, 0.62) 0 0.58px, transparent 0.9px),
+    radial-gradient(circle, rgba(103, 232, 249, 0.56) 0 0.52px, transparent 0.86px),
+    radial-gradient(circle, rgba(216, 180, 254, 0.46) 0 0.48px, transparent 0.82px) ;
+  background-size:
+    210px 210px,
+    285px 285px,
+    390px 390px ;
+}
+
+#root /* Nav : un peu plus fin, #root mais toujours identifiable. */
+.premium-nav-button,
+#root .premium-final-action {
+  width: 94px ;
+  min-height: 94px ;
+  border-radius: 24px ;
+  border-width: 1px ;
+}
+
+#root .premium-nav-button__icon,
+#root .premium-final-action__icon {
+  width: 49px ;
+  height: 49px ;
+}
+
+#root .premium-nav-button__label,
+#root .premium-final-action__label {
+  font-size: 0.94rem ;
+  font-weight: 850 ;
+  letter-spacing: -0.028em ;
+}
+
+@media (max-height: 780px) {
+  #root .home-premium-content {
+    gap: clamp(1.65rem, 3.2vh, 2.5rem) ;
+  }.home-hero-panel {
+    
+    
+  }
+#root .home-hero-panel {
+  padding-top: clamp(1.25rem, 2.4vh, 1.8rem);
+  padding-bottom: clamp(1.25rem, 2.4vh, 1.8rem);
+}
+
+
+  #root .home-level-card {
+    min-height: clamp(275px, 33vh, 335px) ;
+  }
+
+  #root .home-level-name {
+    margin-bottom: 0.55rem ;
+  }
+
+  #root .home-level-arrow {
+    bottom: 0.95rem ;
+  }
+
+  #root .level-page-shell .level-page-title,
+  #root .activity-selection-shell .activity-unit-hero h1 {
+    font-size: clamp(1.85rem, 3vw, 2.8rem) ;
+  }
+
+  #root .level-semester-panel h2 {
+    font-size: clamp(1.85rem, 2.7vw, 2.6rem) ;
+  }
+
+  #root .level-unit-card h3 {
+    font-size: clamp(1.05rem, 1.35vw, 1.36rem) ;
+  }
+}
+
+/* ===== Proportions, scroll invisible, aurora continue, contours glass dégradés ===== */
+html,
+body,
+#root {
+  height: 100%;
+  overflow: hidden !important;
+}
+
+body {
+  background: #01030d !important;
+}
+
+#root .app-shell-scroll,
+#root .home-premium-shell,
+#root .level-page-shell,
+#root .activity-selection-shell {
+  position: relative;
+  height: 100dvh ;
+  min-height: 100dvh ;
+  overflow-x: hidden ;
+  overflow-y: auto ;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.app-shell-scroll::-webkit-scrollbar,
+.home-premium-shell::-webkit-scrollbar,
+.level-page-shell::-webkit-scrollbar,
+.activity-selection-shell::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.home-premium-shell::before,
+.home-premium-shell::after,
+.level-page-shell::before,
+.level-page-shell::after,
+.activity-selection-shell::before,
+.activity-selection-shell::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+.home-premium-shell::before,
+.level-page-shell::before,
+.activity-selection-shell::before {
+  z-index: 0;
+  background:
+    linear-gradient(
+      116deg,
+      transparent 0 18%,
+      rgba(34, 211, 238, 0.1) 28%,
+      rgba(59, 130, 246, 0.07) 36%,
+      transparent 48%
+    ),
+    linear-gradient(
+      146deg,
+      transparent 0 42%,
+      rgba(217, 70, 239, 0.11) 52%,
+      rgba(251, 191, 36, 0.05) 61%,
+      transparent 74%
+    );
+  filter: blur(1px) saturate(1.18);
+  opacity: 0.92;
+}
+
+.home-premium-shell::after,
+.level-page-shell::after,
+.activity-selection-shell::after {
+  z-index: 0;
+  background:
+    radial-gradient(ellipse at 18% 62%, rgba(34, 211, 238, 0.16), transparent 28%),
+    radial-gradient(ellipse at 84% 28%, rgba(168, 85, 247, 0.18), transparent 30%),
+    radial-gradient(ellipse at 60% 100%, rgba(56, 189, 248, 0.08), transparent 32%);
+  filter: blur(26px);
+  opacity: 0.76;
+}
+
+#root .home-space-layer--aurora,
+#root .activity-aurora,
+#root .activity-stars-layer {
+  position: fixed ;
+}
+
+.home-premium-content,
+.level-page-shell > .relative.z-10,
+.activity-selection-shell > .relative.z-10 {
+  position: relative;
+  z-index: 2;
+}#root .home-premium-content {
+  width: min(1500px, calc(100% - 2rem)) ;
+  justify-content: flex-start;
+  
+  
+  gap: clamp(3.2rem, 6vh, 4.8rem) ;
+}
+#root .home-premium-content {
+  padding-top: clamp(3.2rem, 6vh, 4.8rem);
+  padding-bottom: clamp(2.8rem, 5vh, 4.8rem);
+}
+
+
+.home-hero-wrap--v24 {
+  margin-bottom: 0.4rem;
+}
+
+#root .home-hero-panel,
+#root .home-hero-panel--v24 {
+  width: min(840px, 100%) ;
+  box-shadow:
+    0 0 0 1px rgba(125, 211, 252, 0.24) inset,
+    0 0 28px rgba(56, 189, 248, 0.28),
+    0 0 52px rgba(168, 85, 247, 0.16),
+    0 30px 80px rgba(0, 0, 0, 0.52) ;
+}
+
+#root .home-level-grid,
+#root .home-level-grid--v24 {
+  gap: clamp(1.6rem, 3vw, 2.55rem) ;
+  align-items: stretch;
+}
+
+#root .home-level-card,
+#root .home-level-card--v24 {
+  min-height: clamp(322px, 37vh, 398px) ;
+  border: 1.5px solid rgba(255, 255, 255, 0.22);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.1) inset,
+    0 20px 56px rgba(0, 0, 0, 0.42) ;
+}
+
+.home-level-name {
+  margin-top: 0.15rem;
+  margin-bottom: 0.35rem;
+}.home-level-arrow {
+  
+}
+#root .home-level-arrow {
+  margin-top: 1.85rem;
+}
+.home-card-star {
+  
+  opacity: 0.34;
+  
+}
+#root .home-card-star {
+  font-size: 0.78rem;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.56);
+}
+
+
+.premium-gradient-border {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.25px;
+  pointer-events: none;
+  z-index: 2;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.8) 0%,
+    rgba(255, 255, 255, 0.22) 16%,
+    rgba(103, 232, 249, 0.58) 44%,
+    rgba(217, 70, 239, 0.44) 76%,
+    rgba(255, 255, 255, 0.26) 100%
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  opacity: 0.92;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.1));
+  transition:
+    opacity 280ms ease,
+    filter 280ms ease;
+}
+
+.home-level-card:hover .premium-gradient-border,
+.home-level-card:focus-visible .premium-gradient-border,
+.activity-select-card:hover .premium-gradient-border,
+.activity-select-card:focus-visible .premium-gradient-border,
+.level-unit-card:hover .premium-gradient-border,
+.level-unit-card:focus-visible .premium-gradient-border,
+.level-semester-panel:hover .premium-gradient-border {
+  opacity: 1;
+  filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.18));
+}.level-page-shell {
+  
+}
+#root .level-page-shell {
+  background: radial-gradient(circle at 12% 8%, rgba(34, 211, 238, 0.14), transparent 24%),
+    radial-gradient(circle at 88% 14%, rgba(236, 72, 153, 0.12), transparent 26%),
+    linear-gradient(135deg, #021022 0%, #071a34 44%, #150728 100%);
+}
+
+
+.level-page-shell > .relative.z-10.max-w-\[1500px\].mx-auto.pt-28.md\:pt-32 {
+  padding-bottom: 3rem;
+}
+
+#root .level-page-title,
+#root .level-page-shell .level-page-title,
+#root .activity-hero-title {
+  font-size: clamp(2.4rem, 4vw, 4rem) ;
+  font-weight: 800 ;
+  letter-spacing: -0.03em ;
+  word-spacing: 0.08em;
+  line-height: 1.05 ;
+  text-wrap: balance;
+}
+
+#root .activity-hero-label,
+#root .level-page-shell .text-cyan-300 {
+  font-size: clamp(1rem, 1.4vw, 1.35rem) ;
+  letter-spacing: -0.015em;
+}
+
+.level-semester-panel,
+.level-unit-card,
+.activity-unit-hero {
+  position: relative;
+  overflow: hidden;
+}.level-semester-panel {
+  
+  
+}
+#root .level-semester-panel {
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1) inset,
+    0 0 24px rgba(56, 189, 248, 0.1),
+    0 26px 62px rgba(0, 0, 0, 0.36);
+}
+.level-unit-card {
+  
+  
+}
+#root .level-unit-card {
+  border-color: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08) inset,
+    0 16px 34px rgba(0, 0, 0, 0.24);
+}
+
+
+#root .level-unit-card:hover,
+#root .level-unit-card:focus-visible {
+  transform: translateY(-3px);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.12) inset,
+    0 0 16px rgba(103, 232, 249, 0.12),
+    0 20px 42px rgba(0, 0, 0, 0.28) ;
+}.activity-selection-shell {
+  
+}
+#root .activity-selection-shell {
+  background: radial-gradient(circle at 12% 10%, rgba(34, 211, 238, 0.17), transparent 24%),
+    radial-gradient(circle at 88% 14%, rgba(236, 72, 153, 0.14), transparent 26%),
+    linear-gradient(135deg, #020818 0%, #07162e 46%, #140826 100%);
+}
+
+
+.activity-selection-shell
+  > .relative.z-10.max-w-\[1500px\].mx-auto.pt-28.md\:pt-32.md\:pl-24.xl\:pl-20 {
+  padding-bottom: 3rem;
+}
+
+#root .activity-unit-hero {
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.1) inset,
+    0 0 22px rgba(34, 211, 238, 0.12),
+    0 26px 62px rgba(0, 0, 0, 0.34) ;
+}
+
+#root .activity-select-card,
+#root .activity-select-card--v24 {
+  min-height: 322px;
+  border: 1.5px solid rgba(255, 255, 255, 0.2) ;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.1) inset,
+    0 18px 48px rgba(0, 0, 0, 0.4) ;
+}
+
+#root .activity-select-card:hover,
+#root .activity-select-card:focus-visible {
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.15) inset,
+    0 0 20px var(--activity-glow-soft),
+    0 24px 56px rgba(0, 0, 0, 0.46) ;
+}#root .activity-card-spark {
+  
+  opacity: 0.8;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5) ;
+}
+#root .activity-card-spark {
+  font-size: 0.76rem;
+}
+
+
+#root .activity-icon-bubble,
+#root .level-icon-bubble,
+#root .premium-nav-button__icon {
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.1) inset,
+    0 14px 30px rgba(0, 0, 0, 0.24) ;
+}
+
+#root .home-level-icon-wrap::before,
+#root .activity-icon-ring,
+#root .level-icon-bubble::before,
+#root .premium-nav-button__icon::before {
+  -webkit-mask: radial-gradient(
+    farthest-side,
+    transparent calc(100% - 6px),
+    #000 calc(100% - 5px)
+  ) ;
+  mask: radial-gradient(
+    farthest-side,
+    transparent calc(100% - 6px),
+    #000 calc(100% - 5px)
+  ) ;
+  opacity: 0.88 ;
+}
+
+@media (max-width: 1200px) {
+  #root .home-premium-content {
+    width: min(1180px, calc(100% - 1.75rem)) ;
+  }
+}
+
+@media (max-width: 980px) {
+  #root .home-premium-content {
+    width: min(760px, calc(100% - 1.35rem)) ;
+    gap: 2.1rem ;
+  }
+
+  #root .home-level-grid,
+  #root .home-level-grid--v24 {
+    grid-template-columns: 1fr ;
+    gap: 1.35rem ;
+  }
+
+  #root .home-level-card,
+  #root .home-level-card--v24 {
+    min-height: 292px ;
+  }
+
+  #root .level-page-title,
+  #root .level-page-shell .level-page-title,
+  #root .activity-hero-title {
+    font-size: clamp(2rem, 7vw, 3rem) ;
+  }
+}
+
+@media (max-width: 760px) {
+  #root .level-page-shell,
+  #root .activity-selection-shell {
+    padding-left: 1rem ;
+    padding-right: 1rem ;
+  }
+
+  #root .level-page-shell .relative.z-10,
+  #root .activity-selection-shell .relative.z-10 {
+    padding-left: 0 ;
+  }
+
+  #root .home-hero-panel,
+  #root .home-hero-panel--v24 {
+    padding-left: 1.35rem ;
+    padding-right: 1.35rem ;
+  }
+}
